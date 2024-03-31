@@ -53,4 +53,35 @@ const register=async(req,res)=>{
     }
     
 };
-module.exports={home,register};
+
+//-----------------------------
+//** USER LOGIN Logic **/
+//*---------------------------
+
+const login =async function(req,res){
+    try{
+       
+        const {email,password} = req.body;
+        const userExist=await User.findOne({ email});
+        //console.log(userExist);
+        if(!userExist){
+            return res.status(400).json({message:"Invalid Credetials"});
+        }
+        const isPasswordValid=await bcrypt.compare(password,userExist.password);
+
+        if(isPasswordValid){
+            res.status(200).json({
+                msg:"Login succesfull",
+                token: await userExist.generateToken(),
+                userId:  userExist._id.toString(),
+            });
+        }else{
+            res.status(401).json({message:"Invalid Email or Password"});
+        }
+
+
+    }catch(error){
+        res.status(500).json("Internal Server Error");
+    }
+}
+module.exports={home,register,login};
