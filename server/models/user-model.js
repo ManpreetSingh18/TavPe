@@ -42,6 +42,7 @@ userSchema.pre("save", async function (next) {
     const hash_password = await bcrypt.hash(user.password, saltRound);
     user.password = hash_password;
   } catch (error) {
+    console.log("From user model error", error);
     next(error);
   }
 });

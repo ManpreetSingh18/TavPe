@@ -14,10 +14,21 @@ const validate=(schema) => async(req,res,next) => {
         const parseBody= await schema.parseAsync(req.body);
         req.body=parseBody;
         next();
-    }catch(error){
-        console.log(error);
-        const message=error.errors[0].message;
-        res.status(400).json({msg:message})
+    }
+    catch(err){
+       
+        const status = 422;
+        let message = "Fill the Input Properly";
+
+       const extraDetails=err.errors[0].message;
+        //res.status(400).json({msg:message})
+        const error={
+            status,
+            message,
+            extraDetails
+        };
+        //console.log("error from validate middleware",err);
+        next(error);
         
     }
  }

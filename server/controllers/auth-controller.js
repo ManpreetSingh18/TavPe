@@ -49,7 +49,7 @@ const register=async(req,res)=>{
     }catch(error){
         res.status(500);
         res.send("Error occured in registration");
-        console.log(error)
+        console.log("Error from auth-controller",error)
     }
     
 };
@@ -81,7 +81,8 @@ const login =async function(req,res){
 
 
     }catch(error){
-        res.status(500).json("Internal Server Error");
+        //res.status(500).json("Internal Server Error");
+        next(error);
     }
 }
 module.exports={home,register,login};
