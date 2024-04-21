@@ -1,4 +1,4 @@
-// import { Analytics } from "../components/Analytics";
+import { Analytics } from "../components/Analytics";
 
 export const Home = () => {
   return (
@@ -40,27 +40,7 @@ export const Home = () => {
 
       {/* 2nd section  */}
 
-      <section className="section-analytics">
-        <div className="container">
-          <div className="div1">
-            <h2>50+</h2>
-            <p>Registered Company</p>
-          </div>
-          <div calssName="div1">
-            <h2>100,00+</h2>
-            <p>Happy Clients</p>
-          </div>
-          <div calssName="div1">
-            <h2>500+</h2>
-            <p>Well Known Developers</p>
-          </div>
-          <div calssName="div1">
-            <h2>24/7</h2>
-            <p>Service</p>
-          </div>
-
-        </div>
-      </section>
+      <Analytics />
       {/* <Analytics /> */}
 
       {/* 3rd section  */}
