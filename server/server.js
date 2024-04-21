@@ -5,7 +5,14 @@ const authRoute=require("./router/auth-router");
 const contactRoute=require("./router/contact-router");
 const connectDb=require("./utils/db");
 const errorMiddleware=require("./middleware/error-middleware");
-
+const cors=require("cors");
+// let tackle cors
+const corsOptions = {
+    origin: "http://localhost:5173",
+    methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
+    credentials: true,
+  };
+app.use(cors(corsOptions));
 app.use(express.json());
 
 //Mount the router:To use the router in your main Express App

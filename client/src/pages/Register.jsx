@@ -1,26 +1,48 @@
 import { useState } from "react";
 export const Register = () => {
-    const [user,setUser]=useState({
-        username:"",
-        email:"",
-        phone:"",
-        password:"",
+  const [user, setUser] = useState({
+    username: "",
+    email: "",
+    phone: "",
+    password: "",
+  });
+  // handling the input values
+  const handleInput = (e) => {
+    console.log(e);
+    let name = e.target.name;
+    let value = e.target.value;
+    setUser({
+      ...user,
+      [name]: value,
     });
-    // handling the input values
-    const handleInput=(e)=>{
-        console.log(e);
-        let name=e.target.name;
-        let value=e.target.value;
-        setUser({
-            ...user,
-            [name]: value,
-        })
-    }
+  };
 
-    const handleSubmit=(e)=>{
-        e.preventDefault();
-        alert(user);
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(user);
+    //alert(user);
+    try {
+      const response = await fetch("http://localhost:3000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+      console.log("Response:", response);
+
+      if (response.ok) {
+        const responseData = await response.json();
+        alert("registration successful");
+        setUser({ username: "", email: "", phone: "", password: "" });
+        console.log(responseData);
+      } else {
+        console.log("error inside response ", "error");
+      }
+    } catch (e) {
+      console.log("Error Occured: " + e.message);
     }
+  };
   return (
     <>
       <section>
@@ -88,8 +110,8 @@ export const Register = () => {
                       onChange={handleInput}
                     />
                     <br />
-                    <button type="submit"  className="btn btn-submit">
-                        Register Now
+                    <button type="submit" className="btn btn-submit">
+                      Register Now
                     </button>
                   </div>
                 </form>
