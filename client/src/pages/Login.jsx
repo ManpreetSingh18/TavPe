@@ -1,28 +1,55 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
+const URL = "http://localhost:3000/api/auth/login";
 
 export const Login = () => {
-    const [user,setUser]=useState({
-        email:"",
-        password:"",
+  const [user, setUser] = useState({
+    email: "",
+    password: "",
+  });
+
+  const navigate = useNavigate();
+  // handling the input values
+  const handleInput = (e) => {
+    console.log(e);
+    let name = e.target.name;
+    let value = e.target.value;
+    setUser({
+      ...user,
+      [name]: value,
     });
+  };
 
-    
-    // handling the input values
-    const handleInput=(e)=>{
-        console.log(e);
-        let name=e.target.name;
-        let value=e.target.value;
-        setUser({
-            ...user,
-            [name]: value,
-        })
-    }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(user);
+    //alert(user);
+    try {
+      const response = await fetch(URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(user),
+      });
+      console.log("Login Form:", response);
 
-    const handleSubmit=(e)=>{
-        e.preventDefault();
-        console.log(user);
-        alert(user);
+      if (response.ok) {
+        const responseData = await response.json();
+        alert("Login successful");
+        setUser({ email: "", password: "" });
+
+        console.log(responseData);
+        navigate("/");
+      } else {
+        alert("Invalid Credentials");
+        console.log("Invalid Credentials ");
+      }
+    } catch (e) {
+      console.log("Error Occured: " + e.message);
     }
+  };
   return (
     <>
       <section>
@@ -43,7 +70,6 @@ export const Login = () => {
                 <br />
                 <form action="" onSubmit={handleSubmit}>
                   <div>
-                   
                     <label htmlFor="email">Email</label>
                     <input
                       type="email"
@@ -55,8 +81,6 @@ export const Login = () => {
                       value={user.email}
                       onChange={handleInput}
                     />
-
-                    
 
                     <label htmlFor="password">Password</label>
                     <input
@@ -70,8 +94,8 @@ export const Login = () => {
                       onChange={handleInput}
                     />
                     <br />
-                    <button type="submit"  className="btn btn-submit">
-                        Register Now
+                    <button type="submit" className="btn btn-submit">
+                      Register Now
                     </button>
                   </div>
                 </form>
