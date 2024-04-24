@@ -1,5 +1,6 @@
 import { useState } from "react";
 import {useAuth} from "../store/auth";
+import { useNavigate } from "react-router-dom";
 
 export const Register = () => {
   const [user, setUser] = useState({
@@ -8,6 +9,7 @@ export const Register = () => {
     phone: "",
     password: "",
   });
+  const navigate = useNavigate();
   // handling the input values
   const handleInput = (e) => {
     console.log(e);
@@ -40,6 +42,7 @@ export const Register = () => {
 
         
         alert("registration successful");
+        navigate("/");
         setUser({ username: "", email: "", phone: "", password: "" });
        
       } else {
