@@ -1,4 +1,6 @@
 import { useState } from "react";
+import {useAuth} from "../store/auth";
+
 export const Register = () => {
   const [user, setUser] = useState({
     username: "",
@@ -17,6 +19,7 @@ export const Register = () => {
     });
   };
 
+  const {storetokenInLs}=useAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(user);
@@ -32,10 +35,13 @@ export const Register = () => {
       console.log("Response:", response);
 
       if (response.ok) {
-        const responseData = await response.json();
+        const res_Data = await response.json();
+        storetokenInLs(res_Data.token);
+
+        
         alert("registration successful");
         setUser({ username: "", email: "", phone: "", password: "" });
-        console.log(responseData);
+       
       } else {
         console.log("error inside response ", "error");
       }
