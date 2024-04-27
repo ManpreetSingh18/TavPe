@@ -9,8 +9,10 @@ export const Contact = () => {
     message: "",
   });
   const [userData,setUserData]=useState(true);
+  //fetching from DB
   const {user} =useAuth();
   
+  //logic for fetching data in contact form when user is already logged in
   if(userData && user){
     setContact({
       username:user.username,
@@ -31,10 +33,30 @@ export const Contact = () => {
   };
 
   // handle fomr getFormSubmissionInfo
-  const handleSubmit = (e) => {
+  const handleSubmit =async (e) => {
     e.preventDefault();
 
-    console.log(contact);
+    try {
+      const response = await fetch("http://localhost:3000/api/form/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(contact),
+      });
+      //console.log("Response:", response);
+
+      if (response.ok) {
+        // const res_Data = await response.json();
+        alert("Successful");
+        setContact({ message:"" });
+       
+      } else {
+        console.log("error inside response ", "error");
+      }
+    } catch (e) {
+      console.log("Error Occured: " + e.message);
+    }
   };
 
 //  Help me reach 1 Million subs 👉 https://youtube.com/thapatechnical
