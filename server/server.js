@@ -3,6 +3,7 @@ const express=require("express");
 const app=express();
 const authRoute=require("./router/auth-router");
 const contactRoute=require("./router/contact-router");
+const serviceRoute=require("./router/service-router");
 const connectDb=require("./utils/db");
 const errorMiddleware=require("./middleware/error-middleware");
 const cors=require("cors");
@@ -24,6 +25,9 @@ app.use("/api/form",contactRoute);
 //it means  that if there error occured then we will not proceed with making connection in next code 
 //s //app.use(errorMiddleware());
 app.use(errorMiddleware);
+
+//route for service
+app.use("/api/data",serviceRoute);
 
 const PORT=3000;
 
