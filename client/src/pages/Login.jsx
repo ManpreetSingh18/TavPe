@@ -25,7 +25,7 @@ export const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
+    //console.log(user);
     //alert(user);
     try {
       const response = await fetch(URL, {
@@ -35,7 +35,7 @@ export const Login = () => {
         },
         body: JSON.stringify(user),
       });
-      console.log("Login Form:", response);
+     // console.log("Login Form:", response);
 
       if (response.ok) {
         const res_Data = await response.json();

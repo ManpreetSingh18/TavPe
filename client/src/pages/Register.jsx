@@ -12,7 +12,7 @@ export const Register = () => {
   const navigate = useNavigate();
   // handling the input values
   const handleInput = (e) => {
-    console.log(e);
+    //console.log(e);
     let name = e.target.name;
     let value = e.target.value;
     setUser({
@@ -24,7 +24,7 @@ export const Register = () => {
   const {storetokenInLs}=useAuth();
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(user);
+    //console.log(user);
     //alert(user);
     try {
       const response = await fetch("http://localhost:3000/api/auth/register", {
@@ -34,7 +34,7 @@ export const Register = () => {
         },
         body: JSON.stringify(user),
       });
-      console.log("Response:", response);
+      //console.log("Response:", response);
 
       if (response.ok) {
         const res_Data = await response.json();
