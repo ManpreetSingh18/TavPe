@@ -35,9 +35,11 @@ export const Register = () => {
         body: JSON.stringify(user),
       });
       //console.log("Response:", response);
+      const res_Data = await response.json();
+      console.log("Res from server:", res_Data);
 
       if (response.ok) {
-        const res_Data = await response.json();
+        
         storetokenInLs(res_Data.token);
 
         
@@ -46,7 +48,7 @@ export const Register = () => {
         setUser({ username: "", email: "", phone: "", password: "" });
        
       } else {
-        console.log("error inside response ", "error");
+        alert(res_Data.extraDetails ? res_Data.extraDetails:res_Data.message);
       }
     } catch (e) {
       console.log("Error Occured: " + e.message);
