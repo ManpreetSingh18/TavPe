@@ -4,6 +4,7 @@ const app=express();
 const authRoute=require("./router/auth-router");
 const contactRoute=require("./router/contact-router");
 const serviceRoute=require("./router/service-router");
+const adminRoute=require("./router/admin-router");
 const connectDb=require("./utils/db");
 const errorMiddleware=require("./middleware/error-middleware");
 const cors=require("cors");
@@ -28,6 +29,9 @@ app.use(errorMiddleware);
 
 //route for service
 app.use("/api/data",serviceRoute);
+
+//route for Admin
+app.use("/api/admin",adminRoute);
 
 const PORT=3000;
 
