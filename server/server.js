@@ -33,6 +33,8 @@ app.use("/api/data",serviceRoute);
 //route for Admin
 app.use("/api/admin",adminRoute);
 
+
+
 const PORT=3000;
 
 //agar connection DB se ho tab hi age connect kare
