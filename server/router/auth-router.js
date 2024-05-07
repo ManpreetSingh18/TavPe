@@ -5,7 +5,7 @@ const {signupSchema,loginSchema}=require("../validators/auth-validator")
 
 
 const validate=require("../middleware/validate-middleware")
-const authMiddleware=require("../middleware/authMiddleware")
+const authMiddleware=require("../middleware/auth-middleware")
 router.route("/").get(authcontroller.home);
 
 //it will first validate then move to register code
