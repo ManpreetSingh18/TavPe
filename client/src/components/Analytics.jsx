@@ -14,7 +14,7 @@ export const Analytics = () => {
           </div>
           <div className="div1">
             <h2>500+</h2>
-            <p>Well Known Developers</p>
+            <p>Well Known Collaboration</p>
           </div>
           <div className="div1">
             <h2>24/7</h2>

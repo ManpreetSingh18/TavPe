@@ -11,8 +11,8 @@ export const Home = () => {
               <h1>Welcome to TavPrasad</h1>
               <p>
                 Are you ready to take your business to the next level with
-                cutting-edge loan solutions? Look no further! At Loanxe,
-                we specialize in providing innovative IT services and solutions
+                cutting-edge loan solutions? Look no further! At Loanxe, we
+                specialize in providing innovative IT services and solutions
                 tailored to meet your unique needs.
               </p>
               <div className="btn btn-group">
@@ -60,10 +60,11 @@ export const Home = () => {
             <p>We are here to help you</p>
             <h1>Get Started Today</h1>
             <p>
-              Ready to take the first step towards a more efficient and secure
-              IT infrastructure? Contact us today for a free consultation and
-              let's discuss how Loanxe can help your business thrive in
-              the digital age.
+              Our team comprises seasoned financial professionals dedicated to
+              staying abreast of the ever-changing landscape of the lending
+              industry. We thrive on leveraging our extensive experience to
+              guide you through the complexities of loan options and market
+              trends.
             </p>
             <div className="btn btn-group">
               <a href="/contact">

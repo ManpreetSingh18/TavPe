@@ -63,7 +63,7 @@ export const Login = () => {
             <div className="container grid grid-two-cols">
               <div className="registration-image">
                 <img
-                  src="https://media.istockphoto.com/id/1339464766/photo/finishing-job-remotely-from-home.jpg?s=612x612&w=is&k=20&c=3naV9A4ZHy3j7pkvxpAJspTDVsMpnCougtsI4yAi8lg="
+                   src="/images/register.png"
                   alt="a girl is trying to do Login"
                   width="400"
                   height="500"
@@ -71,7 +71,7 @@ export const Login = () => {
               </div>
               {/* let tackle Login form */}
               <div className="registration-form">
-                <h1 className="main-heading mb-3">Registration form</h1>
+                <h1 className="main-heading mb-3">Login form</h1>
                 <br />
                 <form action="" onSubmit={handleSubmit}>
                   <div>

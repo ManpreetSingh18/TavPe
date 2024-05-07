@@ -1,43 +1,42 @@
 import { NavLink } from "react-router-dom";
 import { Analytics } from "../components/Analytics";
-import {useAuth} from "../store/auth"
+import { useAuth } from "../store/auth";
 export const About = () => {
-  const {user} =useAuth();
+  const { user } = useAuth();
   return (
-    
     <>
       <main>
         <section className="section-hero">
           <div className="container grid grid-two-cols">
             <div className="hero-content">
               {/* <p>We care to cure your Health</p> */}
-              <p>Welcome {
-              user ? user.username:"to our website"
-              }</p>
+              <p>Welcome {user ? user.username : "to our website"}</p>
               <h1>Why Choose Us? </h1>
               <p>
-                Expertise: Our team consists of experienced IT professionals who
-                are passionate about staying up-to-date with the latest industry
-                trends.
+                Expertise: Our team comprises seasoned financial professionals
+                dedicated to staying abreast of the ever-changing landscape of
+                the lending industry.
               </p>
               <p>
-                Customization: We understand that every business is unique.
-                Thats why we create solutions that are tailored to your specific
-                needs and goals.
+                Personalization: Recognizing the individuality of each borrower,
+                we craft bespoke solutions tailored precisely to your financial
+                requirements and aspirations. 
               </p>
               <p>
-                Customer-Centric Approach: We prioritize your satisfaction and
-                provide top-notch support to address your IT concerns.
+                Customer-Centric Focus: Your satisfaction is paramount to us. We
+                go above and beyond to provide unparalleled support, addressing
+                your concerns with diligence and care.
               </p>
               <p>
-                Affordability: We offer competitive pricing without compromising
-                on the quality of our services.
+                Affordability: Offering competitive rates without compromising
+                on the quality of service is our promise.
               </p>
               <p>
-                Reliability: Count on us to be there when you need us. We're
-                committed to ensuring your IT environment is reliable and
-                available 24/7.
+                Reliability: Depend on us to be your steadfast partner in
+                navigating the lending landscape. We guarantee round-the-clock
+                availability and steadfast support.
               </p>
+
               <div className="btn btn-group">
                 <NavLink to="/contact">
                   <button className="btn"> Connect Now</button>

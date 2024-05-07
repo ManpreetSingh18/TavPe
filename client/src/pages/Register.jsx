@@ -62,7 +62,7 @@ export const Register = () => {
             <div className="container grid grid-two-cols">
               <div className="registration-image">
                 <img
-                  src="https://media.istockphoto.com/id/1339464766/photo/finishing-job-remotely-from-home.jpg?s=612x612&w=is&k=20&c=3naV9A4ZHy3j7pkvxpAJspTDVsMpnCougtsI4yAi8lg="
+                   src="/images/register.png"
                   alt="a girl is trying to do registration"
                   width="400"
                   height="500"
