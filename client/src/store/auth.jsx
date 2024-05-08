@@ -4,10 +4,12 @@ import { useContext } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+
+  
   const [token, setToken] = useState(localStorage.getItem("token"));
   const [user, setUser] = useState("");
   //storing the token in localStorage
-
+  const authorizationToken=`Bearer ${token}`;
   //for services
   const [services,setServices] = useState([]);
 
@@ -33,8 +35,7 @@ export const AuthProvider = ({ children }) => {
       const response = await fetch("http://localhost:3000/api/auth/user", {
         method: "GET",
         headers: {
-          "Content-Type": "application/json",
-          Authorization: `bearer ${token}`,
+          Authorization: authorizationToken,
         },
       });
 
@@ -56,9 +57,9 @@ export const AuthProvider = ({ children }) => {
 
       if(response.ok){
         const data=await response.json();
-        console.log(data.data);
+       // console.log(data.data);
         setServices(data.data);
-        console.log("service data",services)
+        //console.log("service data",services)
       }
     } catch (e) {
         console.log("Error in services:",e)
@@ -72,7 +73,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ isLoggedIn, storetokenInLs, LogoutUser, user ,services}}
+      value={{ isLoggedIn, storetokenInLs, LogoutUser, user ,services,authorizationToken}}
     >
       {children}
     </AuthContext.Provider>

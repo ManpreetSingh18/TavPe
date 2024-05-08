@@ -2,22 +2,23 @@ const User=require("../models/user-model");
 const Contact=require("../models/contact-model");
 
 
-const getAllUsers=async (req,res)=>{
+const getAllUsers=async (req,res,next)=>{
     try{
         const users=await User.find({},{password:0});
         if(!users || users.length===0){
             return res.status(404).json({message:"No users found"});
             
         }
+        //console.log(users)
         return res.status(200).json(users);
     }
     catch(error){
-        next(error)
+        next(error);
     }
 }
 
 //GET ALL CONTACTS LOGIC
-const getAllContacts=async (req,res)=>{
+const getAllContacts=async (req,res,next)=>{
     try{
         const contact=await Contact.find();
         if(!contact || contact.length===0){
