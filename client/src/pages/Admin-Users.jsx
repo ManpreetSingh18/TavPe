@@ -20,6 +20,23 @@ export const AdminUsers = () => {
     }
   };
 
+  // delete the user on delete button
+  const deleteUser=async(id)=>{
+    try {
+      const response = await fetch(`http://localhost:3000/api/admin/users/delete/${id}`, {
+        method: "DELETE",
+        headers: {
+          Authorization: authorizationToken,
+        },
+      });
+      if(response.ok){
+        getAllUsersData();
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   useEffect(() => {
     getAllUsersData();
   }, []);
@@ -52,7 +69,7 @@ export const AdminUsers = () => {
                         <td>{curUser.email}</td>
                         <td>{curUser.phone}</td>
                         <td>Edit</td>
-                        <td>Delete</td>
+                        <td> <button onClick={()=>deleteUser(curUser._id)}>Delete</button> </td>
                         
                     </tr>
                   )

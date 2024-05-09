@@ -32,4 +32,21 @@ const getAllContacts=async (req,res,next)=>{
     }
 
 }
-module.exports={getAllUsers,getAllContacts};
+
+/*----------------------------------------*/
+/*---------User Delete Logic--------------*/
+/*----------------------------------------*/
+const deleteUserById= async(req,res)=>{
+    try{
+        const id=req.params.id;
+        await User.deleteOne({_id:id});
+        res.status(200).json({message:"User deleted successfully"});
+    }catch(error){
+        console.log(error);
+    }
+}
+
+
+
+
+module.exports={getAllUsers,getAllContacts,deleteUserById};
