@@ -43,15 +43,35 @@ const deleteUserById = async (req, res) => {
 /*----------------------------------------*/
 /*------------Getting detail of user on which edit click-------------*/
 /*----------------------------------------*/
-const getUserById = async (req,res,next) => {
+const getUserById = async (req, res, next) => {
   try {
     const id = req.params.id;
-    const data=await User.findOne({_id:id},{password:0});
-    
+    const data = await User.findOne({ _id: id }, { password: 0 });
+
     return res.status(200).json(data);
   } catch (error) {
     next(error);
   }
 };
 
-module.exports = { getAllUsers, getAllContacts, deleteUserById, getUserById };
+/*----------------------------------------*/
+/*------------User Update Logic-------------*/
+/*----------------------------------------*/
+
+const updateUserById = async (req, res) => {
+  try {
+    const id = req.params.id;
+    const updatedUserData = req.body;
+    const updateUser = await User.updateOne(
+      { _id: id },
+      {
+        $set: updatedUserData,
+      }
+    );
+    return res.status(200).json(updateUser);
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { getAllUsers, getAllContacts, deleteUserById, getUserById,updateUserById };
