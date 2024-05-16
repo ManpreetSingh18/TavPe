@@ -1,4 +1,4 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink,Navigate, Outlet } from "react-router-dom";
 import {  } from "react-icons/fa";
 import { MdMiscellaneousServices } from "react-icons/md";
 
@@ -6,8 +6,19 @@ import { IoIosContact } from "react-icons/io";
 import { MdHome } from "react-icons/md";
 
 import { FaUserAlt } from "react-icons/fa";
+import { useAuth } from "../../store/auth";
 
 export const AdminLayout = () => {
+  const {user,isLoading}=useAuth();
+  
+  if(isLoading ){
+    return <div>Loading...</div>;
+  }
+
+  if(!user.isAdmin){
+    return <Navigate to="/" />;
+  }
+  
   return (
     <>
       <header>
