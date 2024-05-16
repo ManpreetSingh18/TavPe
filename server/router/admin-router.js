@@ -6,7 +6,8 @@ const {
   getAllUsers,
   getAllContacts,
   deleteUserById,
-  getUserById
+  getUserById,
+  updateUserById
 } = require("../controllers/admin-controller");
 
 //first it will check whether user is logged in and if so check whether it is admin and then get all users data
@@ -23,4 +24,8 @@ router
   .route("/users/delete/:id")
   .delete(authMiddleware, adminMiddleware, deleteUserById);
 
+//route for updating user
+router
+  .route("/users/update/:id")
+  .patch(authMiddleware, adminMiddleware, updateUserById);
 module.exports = router;
