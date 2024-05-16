@@ -634,3 +634,50 @@ a.active {
     padding: 0.4rem 0.8rem;
   }
 }
+
+
+/*------------------------------------------*/
+/* Admin contact us page Css*/
+/*------------------------------------------*/
+.admin-contacts-section {
+  padding: 20px;
+  color: black;
+}
+
+.admin-contacts-section h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.container.admin-users {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.container.admin-users div {
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.container.admin-users div p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.container.admin-users div button {
+  padding: 10px 20px;
+  background-color: #ff6f61;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.container.admin-users div button:hover {
+  background-color: #ff5246;
+}
