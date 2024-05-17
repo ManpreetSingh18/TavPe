@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import { useAuth } from "../store/auth"; 
+import { baseUrl } from "../../Urls";
 
 export const Contact = () => {
   const [contact, setContact] = useState({
@@ -37,7 +38,7 @@ export const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/form/contact", {
+      const response = await fetch(`${baseUrl}/api/form/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

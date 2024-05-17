@@ -2,6 +2,7 @@ import { useEffect,useState } from "react"
 import { useAuth } from "../store/auth"
 
 import { toast } from'react-toastify';
+import { baseUrl } from "../../Urls";
 
 export const AdminContacts=()=>{
 
@@ -11,7 +12,7 @@ export const AdminContacts=()=>{
     const getContactsData=async()=>{
 
         try{
-            const response=await fetch("http://localhost:3000/api/admin/contacts",{
+            const response=await fetch(`${baseUrl}/api/admin/contacts`,{
                 method:"GET",
                 headers:{
                     Authorization:authorizationToken
@@ -30,7 +31,7 @@ export const AdminContacts=()=>{
     const deleteContactById=async (id)=>{
         console.log("CLock")
         try{
-            const response =await fetch(`http://localhost:3000/api/admin/contacts/delete/${id}`,{
+            const response =await fetch(`${baseUrl}/api/admin/contacts/delete/${id}`,{
                 method:"DELETE",
                 headers:{
                     Authorization:authorizationToken
