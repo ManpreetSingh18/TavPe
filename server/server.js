@@ -10,7 +10,7 @@ const errorMiddleware=require("./middleware/error-middleware");
 const cors=require("cors");
 // let tackle cors
 const corsOptions = {
-    origin: "https://tav-prasad-o33x.vercel.app",
+    origin: "http://localhost:5173",
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
   };
