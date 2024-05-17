@@ -35,7 +35,7 @@ app.use("/api/admin",adminRoute);
 
 
 
-const PORT=3000;
+const PORT=process.env.PORT;
 
 //agar connection DB se ho tab hi age connect kare
 connectDb().then(()=>{

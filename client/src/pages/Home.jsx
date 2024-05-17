@@ -28,7 +28,7 @@ export const Home = () => {
             {/* hero images  */}
             <div className="hero-image">
               <img
-                src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://public-assets.prod.navi-tech.in/navi-website-assests/images/personal-loan/Web/CL_web.webp"
                 alt="coding together"
                 width="400"
                 height="500"
@@ -49,7 +49,7 @@ export const Home = () => {
           {/* hero images  */}
           <div className="hero-image">
             <img
-              src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?q=80&w=870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+              src="https://navi.com/static/media/InterestRateAndChargesImgNew.ea1a2610.webp"
               alt="coding together"
               width="400"
               height="500"

@@ -72,8 +72,8 @@ export const AdminUsers = () => {
                       <td>{curUser.username}</td>
                       <td>{curUser.email}</td>
                       <td>{curUser.phone}</td>
-                      <td>
-                        <Link to={`/admin/users/${curUser._id}/edit`}>
+                      <td className="changeColor">
+                        <Link to={`/admin/users/${curUser._id}/edit`} style={{ color: '#800020'}}>
                           Edit
                         </Link>
                       </td>

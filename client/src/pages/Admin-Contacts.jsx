@@ -61,7 +61,7 @@ export const AdminContacts=()=>{
             })
         } */}
         <section className="admin-contacts-section">
-            <h1>Admin Contact Data</h1>
+            <h1 >Admin Contact Data</h1>
             <div className="container admin-users">
                 {
                     contactData.map((curContactData,index)=>{

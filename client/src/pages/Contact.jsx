@@ -70,14 +70,14 @@ export const Contact = () => {
         {/* contact page main  */}
         <div className="container grid grid-two-cols">
           <div className="contact-img">
-            <img src="/images/support.png" alt="we are always ready to help" />
+            <img src="https://www.moneytap.com/mt-home/images/hero-image.webp" alt="we are always ready to help" />
           </div>
 
           {/* contact form content actual  */}
           <section className="section-form">
             <form onSubmit={handleSubmit}>
               <div>
-                <label htmlFor="username">username</label>
+                <label htmlFor="username">Name</label>
                 <input
                   type="text"
                   name="username"

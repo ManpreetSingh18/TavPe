@@ -46,10 +46,10 @@ export const About = () => {
             </div>
             <div className="hero-image">
               <img
-                src="/images/about.png"
+                src="https://public-assets.prod.navi-tech.in/navi-website-assests/images/home-loan/web/HL_web.webp"
                 alt="coding buddies "
-                width="400"
-                height="500"
+                width="1000"
+                height="1900"
               />
             </div>
           </div>

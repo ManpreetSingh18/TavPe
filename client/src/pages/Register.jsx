@@ -62,7 +62,7 @@ export const Register = () => {
             <div className="container grid grid-two-cols">
               <div className="registration-image">
                 <img
-                   src="/images/register.png"
+                   src="https://www.dhani.com/services/wp-content/uploads/2021/03/no-emi-bnr-forground.png"
                   alt="a girl is trying to do registration"
                   width="400"
                   height="500"

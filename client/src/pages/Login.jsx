@@ -63,7 +63,7 @@ export const Login = () => {
             <div className="container grid grid-two-cols">
               <div className="registration-image">
                 <img
-                   src="/images/register.png"
+                   src="https://public-assets.prod.navi-tech.in/navi-website-assests/images/calculators-landing-page/CI.svg"
                   alt="a girl is trying to do Login"
                   width="400"
                   height="500"

@@ -8,14 +8,14 @@
 
 :root {
   /* --bg-color: #f4f3ff;
-  --btn-color: #646cff;
+  --btn-color:  #E8E8E8;
   --dark-color: #242424;
   --helper-color: #99b9ff; */
 
   --bg-color: #f4f3ff;
-  --btn-color: #646cff;
+  --btn-color:  #800020;
   --dark-color: #242424;
-  --helper-color: #99b9ff;
+  --helper-color: #E8E8E8;
 }
 
 html {
@@ -55,13 +55,14 @@ a {
   font-weight: 500;
   font-size: 1.8rem;
   letter-spacing: 0.1rem;
-  color: var(--btn-color);
+  color: white;
   text-decoration: inherit;
 }
 
 li {
   list-style: none;
 }
+
 
 /*? layout Rule  */
 
@@ -146,9 +147,9 @@ button {
   margin: 9.6rem 0;
 
   & .container {
-    background-color: var(--bg-color);
+    background-color: white;
     border-radius: 1rem;
-    color: black;
+    color: #800020;
   }
 
   & .grid {
@@ -225,9 +226,8 @@ button:hover {
   /* border: 0.2rem solid #fff; */
 }
 
-a:hover,
-a.active {
-  color: #535bf2;
+a:hover {
+  color: #800020;
 }
 
 /* pseduo elements  */
@@ -530,6 +530,9 @@ a.active {
   border-radius: 1rem;
   padding: 2rem;
 }
+.change-color a{
+  color :#800020;
+}
 
 .admin-users table {
   width: 100%;
@@ -641,7 +644,7 @@ a.active {
 /*------------------------------------------*/
 .admin-contacts-section {
   padding: 20px;
-  color: black;
+  color: white;
 }
 
 .admin-contacts-section h1 {
@@ -653,6 +656,7 @@ a.active {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
+  color: black;
 }
 
 .container.admin-users div {
@@ -681,3 +685,12 @@ a.active {
 .container.admin-users div button:hover {
   background-color: #ff5246;
 }
+
+
+/*------------------------------------------*/
+/*------------------------------------------*/
+/* CHat gpt Code*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+/*------------------------------------------*/
+

@@ -1,6 +1,7 @@
 footer{
     padding: 3.2rem;
     text-align: center;
-    background-color: var(--btn-color);
+    background-color: white;
     margin-top: auto;
+    color: #800020;
 }
