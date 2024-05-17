@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useAuth } from "../store/auth";
 import { Link } from 'react-router-dom';
-import { baseUrl } from "../../Urls";
+
 export const AdminUsers = () => {
   const { authorizationToken } = useAuth();
   const [users, setUsers] = useState([]); // Initialize users state with an empty array
 
   const getAllUsersData = async () => {
     try {
-      const response = await fetch(`${baseUrl}/api/admin/users`, {
+      const response = await fetch("http://localhost:3000/api/admin/users", {
         method: "GET",
         headers: {
           Authorization: authorizationToken,
@@ -25,8 +25,7 @@ export const AdminUsers = () => {
   const deleteUser = async (id) => {
     try {
       const response = await fetch(
-        `${baseUrl}/api/admin/users/delete/${id}`,
-
+        `http://localhost:3000/api/admin/users/delete/${id}`,
         {
           method: "DELETE",
           headers: {

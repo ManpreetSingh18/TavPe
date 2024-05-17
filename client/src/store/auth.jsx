@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import { useContext } from "react";
-import { baseUrl } from "../../Urls";
+
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
   const userAuthentication = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`${baseUrl}/api/auth/user`, {
+      const response = await fetch("http://localhost:3000/api/auth/user", {
         method: "GET",
         headers: {
           Authorization: authorizationToken,
@@ -56,7 +56,7 @@ export const AuthProvider = ({ children }) => {
   //to fetch the services data from the database
   const getServices = async () => {
     try {
-      const response = await fetch(`${baseUrl}/api/data/service`, {
+      const response = await fetch("http://localhost:3000/api/data/service", {
         method: "GET",
       });
 

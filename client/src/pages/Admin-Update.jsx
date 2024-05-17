@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import {useParams} from "react-router-dom"
 import {useAuth} from "../store/auth"
 import {  toast } from 'react-toastify';
-import { baseUrl } from "../../Urls";
 export const AdminUpdate = () => {
   const [data, setData] = useState({
     username: "",
@@ -16,7 +15,7 @@ export const AdminUpdate = () => {
   const getSingleUserData = async (id,error) => {
     try {
       const response = await fetch(
-        `${baseUrl}/api/admin/users/${params.id}`,
+        `http://localhost:3000/api/admin/users/${params.id}`,
         {
           method: "GET",
           headers: {
@@ -56,7 +55,7 @@ export const AdminUpdate = () => {
     e.preventDefault();
     try {
       const response = await fetch(
-        `${baseUrl}/api/admin/users/update/${params.id}`,
+        `http://localhost:3000/api/admin/users/update/${params.id}`,
         {
           method: "PATCH",
           headers: {
