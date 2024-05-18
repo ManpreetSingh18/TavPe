@@ -39,9 +39,11 @@ export const About = () => {
 
               <div className="btn btn-group">
                 <NavLink to="/contact">
-                  <button className="btn"> Connect Now</button>
+                  <button className="btn">Apply for Loan</button>
+                </NavLink >
+                <NavLink to="/">
+                  <button className="btn secondary-btn">learn more</button>
                 </NavLink>
-                <button className="btn secondary-btn">learn more</button>
               </div>
             </div>
             <div className="hero-image">

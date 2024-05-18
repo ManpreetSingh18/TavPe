@@ -1,10 +1,16 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import "./Navbar.css";
 import { useAuth } from "../store/auth";
 
-
 export const Navbar = () => {
-    const {isLoggedIn}=useAuth();
+  const { isLoggedIn } = useAuth();
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <>
       <header>
@@ -12,32 +18,34 @@ export const Navbar = () => {
           <div className="logo-brand">
             <NavLink to="/">TavPrasad</NavLink>
           </div>
-          <nav>
+          <button className="hamburger" aria-label="Toggle navigation" onClick={toggleMenu}>
+            &#9776;
+          </button>
+          <nav className={isOpen ? "nav-open" : ""}>
             <ul>
               <li>
-                <NavLink to="/">Home </NavLink>
+                <NavLink to="/" onClick={toggleMenu}>Home </NavLink>
               </li>
               <li>
-                <NavLink to="/about">About </NavLink>
+                <NavLink to="/about" onClick={toggleMenu}>About </NavLink>
               </li>
               <li>
-                <NavLink to="/Service">Services </NavLink>
+                <NavLink to="/Service" onClick={toggleMenu}>Services </NavLink>
               </li>
               <li>
-                <NavLink to="/contact">Contact </NavLink>
+                <NavLink to="/contact" onClick={toggleMenu}>Contact </NavLink>
               </li>
-
               {isLoggedIn ? (
                 <li>
-                  <NavLink to="/logout">Logout </NavLink>
+                  <NavLink to="/logout" onClick={toggleMenu}>Logout </NavLink>
                 </li>
               ) : (
                 <>
                   <li>
-                    <NavLink to="/register">Register</NavLink>
+                    <NavLink to="/register" onClick={toggleMenu}>Register</NavLink>
                   </li>
                   <li>
-                    <NavLink to="/login">Login </NavLink>
+                    <NavLink to="/login" onClick={toggleMenu}>Login </NavLink>
                   </li>
                 </>
               )}

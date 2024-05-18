@@ -1,22 +1,131 @@
-.container{
+:root {
+    --btn-color: #800020;
+  }
+  
+  .container {
     max-width: 140rem;
     padding: 4.2rem 2.4rem;
     display: flex;
     justify-content: space-between;
-}
-a{
+    align-items: center;
+  }
+  
+  .logo-brand a {
     font-weight: 500;
     font-size: 1.8rem;
     letter-spacing: 0.1rem;
     color: var(--btn-color);
     text-decoration: inherit;
-}
-
-li{
-    list-style: none;
-}
-
-ul{
+  }
+  
+  nav ul {
     display: flex;
     gap: 3.2rem;
-}
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav a {
+    font-weight: 500;
+    font-size: 1.8rem;
+    letter-spacing: 0.1rem;
+    color: var(--btn-color);
+    text-decoration: inherit;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 3rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--btn-color);
+  }
+  
+  /* Media Queries for Responsiveness */
+  
+  @media screen and (max-width: 998px) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav {
+      display: none;
+      width: 100%;
+    }
+  
+    nav.nav-open {
+      display: flex;
+      justify-content: center;  /* Center the nav horizontally */
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      align-items: center; /* Center the items horizontally */
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .logo-brand a {
+      font-size: 1.6rem;
+    }
+  
+    nav a {
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 3.2rem 1.6rem;
+    }
+  
+    .logo-brand a {
+      font-size: 1.4rem;
+    }
+  
+    nav a {
+      font-size: 1.4rem;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    nav ul {
+      gap: 1.6rem;
+    }
+  
+    .logo-brand a {
+      font-size: 1.2rem;
+    }
+  
+    nav a {
+      font-size: 1.2rem;
+    }
+  }
+  
+  @media screen and (max-width: 360px) {
+    .container {
+      padding: 2.4rem 1.2rem;
+    }
+  
+    nav ul {
+      gap: 1.2rem;
+    }
+  
+    .logo-brand a {
+      font-size: 1rem;
+    }
+  
+    nav a {
+      font-size: 1rem;
+    }
+  }
+
+  
+  

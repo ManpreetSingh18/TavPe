@@ -1,14 +1,14 @@
-const {Schema,model} =require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const serviceSchema=new Schema({
-    service:{type:String,required:true},
-    description:{type:String,required:true},
-    price:{type:String,required:true},
-    provider:{type:String,required:true},
-})
+const serviceSchema = new Schema({
+  service: { type: String, required: true },
+  description: { type: String, required: true },
+  price: { type: String, required: true },
+  provider: { type: String, required: true },
+  imageUrl: { type: String, required: true } 
+});
 
-//Service will be converted to Services
+// Service will be converted to Services
+const Service = model("Service", serviceSchema);
 
-const Service=new model("Service",serviceSchema);
-
-module.exports=Service;
+module.exports = Service;

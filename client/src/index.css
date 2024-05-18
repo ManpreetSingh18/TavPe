@@ -1,21 +1,22 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: Urbanist, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  color-scheme:  dark;
+  color-scheme:  light;
 }
 
 :root {
   /* --bg-color: #f4f3ff;
-  --btn-color:  #E8E8E8;
+  --btn-color: #646cff;
   --dark-color: #242424;
   --helper-color: #99b9ff; */
 
   --bg-color: #f4f3ff;
-  --btn-color:  #800020;
+  --btn-color: #800000;
   --dark-color: #242424;
-  --helper-color: #E8E8E8;
+  --helper-color: #99b9ff;
 }
 
 html {
@@ -55,14 +56,13 @@ a {
   font-weight: 500;
   font-size: 1.8rem;
   letter-spacing: 0.1rem;
-  color: white;
+  color: var(--btn-color);
   text-decoration: inherit;
 }
 
 li {
   list-style: none;
 }
-
 
 /*? layout Rule  */
 
@@ -92,6 +92,7 @@ button {
   font-size: 1.7rem;
   font-weight: 500;
   background-color: var(--btn-color);
+  color: white;
   border-radius: 0.8rem;
   -webkit-border-radius: 0.8rem;
   -moz-border-radius: 0.8rem;
@@ -109,6 +110,7 @@ button {
 
 .secondary-btn {
   background-color: transparent;
+  color: #800000;
   box-shadow: inset 0 0 0 0.2rem var(--btn-color);
   margin-left: 3.2rem;
 }
@@ -142,33 +144,64 @@ button {
 /***** End Hero  *****/
 
 /***** analytics Section *****/
-
 .section-analytics {
   margin: 9.6rem 0;
+}
 
-  & .container {
-    background-color: white;
-    border-radius: 1rem;
-    color: #800020;
+.section-analytics .container {
+  background-color: var(--bg-color);
+  border-radius: 1rem;
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.section-analytics .div1 {
+  text-align: center;
+  border-right: 0.2rem solid var(--dark-color);
+  padding: 2rem;
+
+  &:last-child {
+    border: none;
   }
 
-  & .grid {
-    color: var(--dark-color);
+  h2 {
+    font-size: 4.8rem;
+  }
 
-    & .div1 {
-      text-align: center;
-      border-right: 0.2rem solid var(--dark-color);
+  p {
+    text-transform: capitalize;
+  }
+}
 
-      &:last-child {
-        border: none;
-      }
-      & h2 {
-        font-size: 4.8rem;
-      }
-      & p {
-        text-transform: capitalize;
-      }
-    }
+/* Media Queries for Responsiveness */
+
+@media screen and (max-width: 998px) {
+  .section-analytics .container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .section-analytics .div1 {
+    border-right: none;
+    border-bottom: 0.2rem solid var(--dark-color);
+  }
+
+  .section-analytics .div1:nth-child(2n) {
+    border-bottom: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .section-analytics .container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section-analytics .div1 {
+    border: none;
   }
 }
 
@@ -227,7 +260,7 @@ button:hover {
 }
 
 a:hover {
-  color: #800020;
+  color: var(--dark-color);
 }
 
 /* pseduo elements  */
@@ -407,11 +440,9 @@ a:hover {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr 1fr;
 }
-
 /** -----------------------
 ** services section css
 ** -------------------------  */
-
 .section-services {
   & .container:first-child {
     padding: 0;
@@ -424,37 +455,49 @@ a:hover {
   & .card {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 3.2rem;
     border: 0.2rem solid var(--helper-color);
+    height: 100%;
+    padding: 1.6rem;
+    box-sizing: border-box;
+  }
 
-    & .card-img {
-      text-align: center;
-      & img {
-        width: 70%;
-        height: auto;
-        filter: drop-shadow(0 0 2rem 2rem #fff);
-        -webkit-filter: drop-shadow(0 0 2rem 2rem #fff);
-      }
+  & .card-img {
+    text-align: center;
+    flex: 1;
+    & img {
+      width: 70%;
+      height: auto;
+      filter: drop-shadow(0 0 2rem 2rem #fff);
+      -webkit-filter: drop-shadow(0 0 2rem 2rem #fff);
+    }
+  }
+
+  & .card-details {
+    padding: 2.4rem;
+    flex: 1;
+
+    & .grid p {
+      font-size: 1.4rem;
     }
 
-    & .card-details {
-      padding: 2.4rem;
-
-      & .grid p {
-        font-size: 1.4rem;
-      }
-
-      & h2 {
-        font-size: 3.2rem;
-        margin: 1.2rem 0 2.4rem 0;
-      }
+    & h2 {
+      font-size: 3.2rem;
+      margin: 1.2rem 0 2.4rem 0;
     }
   }
 }
 
-/** -----------------------
-** media query section css
-** -------------------------  */
+.card-details p:last-child {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .section-services .card {
+    min-height: 40rem;
+  }
+}
 
 @media (width <= 998px) {
   .grid-two-cols {
@@ -466,37 +509,30 @@ a:hover {
       grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     }
   }
-
-  .section-registration {
-    & .container {
-      & .reg-img img {
-        width: 60%;
-        height: auto;
-      }
-    }
-  }
 }
 
-@media (width <= 798px) {
-  html {
-    font-size: 56.25%;
-  }
+/* New CSS for service section button */
+.section-services .service-btn {
+  text-transform: capitalize;
+  padding: 0.8rem 1.6rem; /* Adjusted padding to make button smaller */
+  font-size: 1.5rem; /* Adjusted font size to make button smaller */
+  font-weight: 500;
+  background-color: var(--btn-color);
+  color: white;
+  border-radius: 0.8rem;
+  border: 0.1rem solid transparent;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  transition: all 0.3s;
+  width: 100%; /* Make the button take the full width of its container */
+  box-sizing: border-box; /* Ensure padding is included in width */
+}
 
-  .section-registration {
-    & .container {
-      & .reg-img img {
-        width: 50%;
-        height: auto;
-      }
-    }
-
-    & .registration-form {
-      & input {
-        width: 100%;
-        padding: 0.6rem 0.6rem;
-      }
-    }
-  }
+.section-services .service-btn:hover {
+  background-color: var(--btn-hover-color); /* Add hover background color */
+  border-color: var(--btn-hover-border-color); /* Add hover border color */
+  color: var(--btn-hover-text-color); /* Add hover text color */
+  box-shadow: inset 0 0 0 0.2rem var(--bg-color);
 }
 
 /* react toastify */
@@ -529,9 +565,6 @@ a:hover {
   background-color: var(--bg-color);
   border-radius: 1rem;
   padding: 2rem;
-}
-.change-color a{
-  color :#800020;
 }
 
 .admin-users table {
@@ -644,7 +677,7 @@ a:hover {
 /*------------------------------------------*/
 .admin-contacts-section {
   padding: 20px;
-  color: white;
+  color: black;
 }
 
 .admin-contacts-section h1 {
@@ -656,7 +689,6 @@ a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
-  color: black;
 }
 
 .container.admin-users div {
@@ -685,12 +717,144 @@ a:hover {
 .container.admin-users div button:hover {
   background-color: #ff5246;
 }
+/* 
+/* css file for making learn more button responsive */
+/* Add the following CSS at the end of your existing CSS file */
+
+/* Adjust button sizes and spacing for smaller screens */
+@media screen and (max-width: 768px) {
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem; /* Increase gap between buttons */
+  }
+
+  .btn {
+    width: 80%; /* Make buttons wider on small screens */
+    font-size: 1.6rem; /* Adjust font size */
+    padding: 1rem 1.5rem; /* Adjust padding */
+  }
+
+  .secondary-btn {
+    margin-left: 0; /* Remove left margin on small screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .btn {
+    width: 100%; /* Make buttons full width on very small screens */
+    font-size: 1.4rem; /* Further adjust font size */
+    padding: 0.8rem 1.2rem; /* Further adjust padding */
+  }
+} 
+
+/* css for making registeration form on center in small screen */
+/* Existing CSS for responsive styles */
+@media screen and (max-width: 768px) {
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem; /* Increase gap between buttons */
+  }
+
+  .btn {
+    width: 80%; /* Make buttons wider on small screens */
+    font-size: 1.6rem; /* Adjust font size */
+    padding: 1rem 1.5rem; /* Adjust padding */
+  }
+
+  .secondary-btn {
+    margin-left: 0; /* Remove left margin on small screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .btn {
+    width: 100%; /* Make buttons full width on very small screens */
+    font-size: 1.4rem; /* Further adjust font size */
+    padding: 0.8rem 1.2rem; /* Further adjust padding */
+  }
+}
+
+/* Add this new CSS */
+@media screen and (max-width: 768px) {
+  .section-registration .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items horizontally */
+    text-align: center; /* Center align text */
+  }
+
+  .registration-form {
+    width: 100%;
+    max-width: 400px; /* Set a max-width for the form */
+    margin: 0 auto; /* Center the form within its container */
+  }
+
+  .registration-image img {
+    width: 100%;
+    height: auto;
+
+  }
+}
 
 
-/*------------------------------------------*/
-/*------------------------------------------*/
-/* CHat gpt Code*/
-/*------------------------------------------*/
-/*------------------------------------------*/
-/*------------------------------------------*/
+
+
+
+/* Existing CSS for responsive styles */
+@media screen and (max-width: 768px) {
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem; /* Increase gap between buttons */
+  }
+
+  .btn {
+    width: 80%; /* Make buttons wider on small screens */
+    font-size: 1.6rem; /* Adjust font size */
+    padding: 1rem 1.5rem; /* Adjust padding */
+  }
+
+  .secondary-btn {
+    margin-left: 0; /* Remove left margin on small screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .btn {
+    width: 100%; /* Make buttons full width on very small screens */
+    font-size: 1.4rem; /* Further adjust font size */
+    padding: 0.8rem 1.2rem; /* Further adjust padding */
+  }
+}
+
+/* Add this new CSS */
+@media screen and (max-width: 768px) {
+  .section-registration .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center align items horizontally */
+    text-align: center; /* Center align text */
+  }
+
+  .registration-form {
+    width: 100%;
+    max-width: 400px; /* Set a max-width for the form */
+    margin: 0 auto; /* Center the form within its container */
+  }
+
+  .registration-image img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .registration-form h1 {
+    text-align: center; /* Center align heading text */
+  }
+}
+
 
