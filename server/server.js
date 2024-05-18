@@ -10,7 +10,7 @@ const errorMiddleware=require("./middleware/error-middleware");
 const cors=require("cors");
 // let tackle cors
 const corsOptions = {
-    origin: "http://localhost:5173",
+    origin: ["http://localhost:5173","https://tavprasad.onrender.com"],
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
   };
