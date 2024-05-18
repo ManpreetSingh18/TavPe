@@ -7,20 +7,25 @@ export const Home = () => {
         <section className="section-hero">
           <div className="container grid grid-two-cols">
             <div className="hero-content">
-              <p>We are the World Best Loan Company</p>
-              <h1>Welcome to TavPrasad</h1>
+              <p>Achieve your finacial goal</p>
+              <h1>Loans for For Daily Expenses</h1>
               <p>
-                Are you ready to take your business to the next level with
-                cutting-edge loan solutions? Look no further! At Loanxe, we
-                specialize in providing innovative IT services and solutions
-                tailored to meet your unique needs.
+              Welcome to TavPrasad! We offer personalized loan solutions for personal, business/professional, car (new and used), and home/property needs. Achieve your financial goals with us today!
+
+
+
+
+
+
+
+
               </p>
               <div className="btn btn-group">
                 <a href="/contact">
-                  <button className="btn">connect now</button>
+                  <button className="btn">Apply Loan now</button>
                 </a>
                 <a href="/services">
-                  <button className="btn secondary-btn">learn more</button>
+                  <button className="btn secondary-btn">Our Services</button>
                 </a>
               </div>
             </div>
@@ -57,7 +62,7 @@ export const Home = () => {
           </div>
 
           <div className="hero-content">
-            <p>We are here to help you</p>
+            <p>Apply Loan now</p>
             <h1>Get Started Today</h1>
             <p>
               Our team comprises seasoned financial professionals dedicated to
@@ -71,7 +76,7 @@ export const Home = () => {
                 <button className="btn">connect now</button>
               </a>
               <a href="/services">
-                <button className="btn secondary-btn">learn more</button>
+                <button className="btn secondary-btn">Our Services</button>
               </a>
             </div>
           </div>

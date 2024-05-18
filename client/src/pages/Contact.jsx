@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useAuth } from "../store/auth"; 
 import {  toast } from 'react-toastify';
+import { baseUrl } from "../../Urls";
 export const Contact = () => {
   const [contact, setContact] = useState({
     username: "",
@@ -44,7 +45,7 @@ export const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("http://localhost:3000/api/form/contact", {
+      const response = await fetch(`${baseUrl}/api/form/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

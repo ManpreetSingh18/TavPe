@@ -1,6 +1,6 @@
 const Contact =require("../models/contact-model")
 
-const contactForm=async(req,res)=>{
+const contactForm=async(req,res,error)=>{
     try{
      const response=req.body;
      await Contact.create(response);
