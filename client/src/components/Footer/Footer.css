@@ -1,14 +1,17 @@
 footer {
-    padding: 3.2rem;
-    text-align: center;
-    background-color: #800020;
-    color: white;
-    width: 100%;
+  padding: 3.2rem;
+  text-align: center;
+  background-color: #800020;
+  color: white;
+  width: 100%;
+}
+
+footer a.creator-link {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  footer {
+    padding: 2rem;
   }
-  
-  @media (max-width: 768px) {
-    footer {
-      padding: 2rem;
-    }
-  }
-  
+}

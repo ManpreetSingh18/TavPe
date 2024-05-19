@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../store/auth";
-import {  toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { baseUrl } from "../../Urls";
+
 const URL = `${baseUrl}/api/auth/login`;
 
 export const Login = () => {
@@ -56,6 +57,7 @@ export const Login = () => {
       console.log("Error Occured: " + e.message);
     }
   };
+
   return (
     <>
       <section>
@@ -80,7 +82,7 @@ export const Login = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="Enter youremail"
+                      placeholder="Enter your email"
                       id="email"
                       required
                       autoComplete="off"
@@ -103,6 +105,8 @@ export const Login = () => {
                     <button type="submit" className="btn btn-submit">
                       Login
                     </button>
+                    <br />
+                    <p>Don't have an account? <a href="/register">Register here</a></p>
                   </div>
                 </form>
               </div>

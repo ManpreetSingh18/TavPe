@@ -1,7 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { useAuth } from "../store/auth"; 
-import {  toast } from 'react-toastify';
+import { useAuth } from "../store/auth";
+import { toast } from "react-toastify";
 import { baseUrl } from "../../Urls";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
+import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
+import { auth } from "../components/firebase/setup";
+
 export const Contact = () => {
   const [contact, setContact] = useState({
     username: "",
@@ -12,12 +17,37 @@ export const Contact = () => {
     salary: "",
     annualIncome: "",
     loanAmount: "",
-    loanType: "", // Added loanType to state
+    loanType: "",
   });
   const [userData, setUserData] = useState(true);
 
   // Fetching from DB
   const { user } = useAuth();
+
+  // OTP state
+  const [phone, setPhone] = useState("");
+  const [otpUser, setOtpUser] = useState(null);
+  const [otp, setOtp] = useState("");
+
+  const sentOtp = async () => {
+    try {
+      const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {});
+      const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha);
+      setOtpUser(confirmation);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const verifyOtp = async () => {
+    try {
+      const data = await otpUser.confirm(otp);
+      toast.success("Verified Successfully");
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   // Logic for fetching data in contact form when user is already logged in
   useEffect(() => {
@@ -64,7 +94,7 @@ export const Contact = () => {
           salary: "",
           annualIncome: "",
           loanAmount: "",
-          loanType: "", // Reset loanType
+          loanType: "",
         });
       } else {
         console.log("Error inside response", "error");
@@ -82,7 +112,10 @@ export const Contact = () => {
         </div>
         <div className="container grid grid-two-cols">
           <div className="contact-img">
-            <img src="https://www.moneytap.com/mt-home/images/hero-image.webp" alt="we are always ready to help" />
+            <img
+              src="https://www.moneytap.com/mt-home/images/hero-image.webp"
+              alt="we are always ready to help"
+            />
           </div>
           <section className="section-form">
             <form onSubmit={handleSubmit}>
@@ -112,16 +145,40 @@ export const Contact = () => {
               </div>
               <div>
                 <label htmlFor="contactNo">Contact No</label>
+                <PhoneInput
+                  country={"in"}
+                  value={phone}
+                  onChange={(phone) => setPhone("+" + phone)}
+                />
+                <button
+                  type="button"
+                  onClick={sentOtp}
+                  style={{ marginRight: "10px", marginTop: "10px" }}
+                >
+                  Send Otp
+                </button>
+                <div id="recaptcha"></div>
+                <br />
                 <input
+                  onChange={(e) => setOtp(e.target.value)}
                   type="text"
+                  placeholder="Enter Otp"
+                />
+                <button
+                  type="button"
+                  onClick={verifyOtp}
+                  style={{ marginTop: "10px" }}
+                >
+                  Verify Otp
+                </button>
+                <input
+                  type="hidden"
                   name="contactNo"
-                  id="contactNo"
-                  autoComplete="off"
-                  value={contact.contactNo}
+                  value={phone}
                   onChange={handleInput}
-                  required
                 />
               </div>
+
               <div>
                 <label htmlFor="profession">Profession</label>
                 <select
@@ -201,7 +258,9 @@ export const Contact = () => {
                 >
                   <option value="">Select</option>
                   <option value="personal loan">Personal Loan</option>
-                  <option value="business/professional loan">Business/Professional Loan</option>
+                  <option value="business/professional loan">
+                    Business/Professional Loan
+                  </option>
                   <option value="car loan">Car Loan</option>
                   <option value="home/property loan">Home/Property Loan</option>
                   <option value="health insurance">Health Insurance</option>

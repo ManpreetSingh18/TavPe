@@ -41,9 +41,9 @@ export const Navbar = () => {
                 </li>
               ) : (
                 <>
-                  <li>
+                  {/* <li>
                     <NavLink to="/register" onClick={toggleMenu}>Register</NavLink>
-                  </li>
+                  </li> */}
                   <li>
                     <NavLink to="/login" onClick={toggleMenu}>Login </NavLink>
                   </li>
