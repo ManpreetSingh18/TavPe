@@ -81,6 +81,7 @@ export const Contact = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(contact),
+        credentials: 'include'
       });
 
       if (response.ok) {
