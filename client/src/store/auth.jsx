@@ -66,8 +66,9 @@ export const AuthProvider = ({ children }) => {
         setServices(data.data);
         //console.log("service data",services)
       }
-    } catch (e) {
-        console.log("Error in services:",e)
+    } catch (error) {
+        //next(error);
+        console.log("Error in services:",error)
     }
   };
 

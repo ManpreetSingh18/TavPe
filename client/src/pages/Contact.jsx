@@ -11,7 +11,7 @@ export const Contact = () => {
   const [contact, setContact] = useState({
     username: "",
     email: "",
-    contactNo: "",
+    phone: "",
     profession: "",
     companyName: "",
     salary: "",
@@ -20,36 +20,37 @@ export const Contact = () => {
     loanType: "",
   });
   const [userData, setUserData] = useState(true);
-
-  // Fetching from DB
-  const { user } = useAuth();
-
-  // OTP state
   const [phone, setPhone] = useState("");
   const [otpUser, setOtpUser] = useState(null);
   const [otp, setOtp] = useState("");
+  const [otpVerified, setOtpVerified] = useState(false); // State to track OTP verification
+
+  const { user } = useAuth();
 
   const sentOtp = async () => {
     try {
       const recaptcha = new RecaptchaVerifier(auth, "recaptcha", {});
       const confirmation = await signInWithPhoneNumber(auth, phone, recaptcha);
       setOtpUser(confirmation);
+      toast.success("OTP sent successfully");
     } catch (error) {
       console.log(error);
+      toast.error("Failed to send OTP");
     }
   };
 
   const verifyOtp = async () => {
     try {
       const data = await otpUser.confirm(otp);
-      toast.success("Verified Successfully");
+      toast.success("OTP verified successfully");
+      setOtpVerified(true);
       console.log(data);
     } catch (error) {
       console.log(error);
+      toast.error("Failed to verify OTP");
     }
   };
 
-  // Logic for fetching data in contact form when user is already logged in
   useEffect(() => {
     if (userData && user) {
       setContact((prevContact) => ({
@@ -61,7 +62,6 @@ export const Contact = () => {
     }
   }, [userData, user]);
 
-  // Handle input change
   const handleInput = (e) => {
     const { name, value } = e.target;
     setContact((prevContact) => ({
@@ -70,9 +70,15 @@ export const Contact = () => {
     }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!otpVerified) {
+      toast.error("Please verify OTP before submitting the form");
+      return;
+    }
+
+    const contactWithPhone = { ...contact, phone };
 
     try {
       const response = await fetch(`${baseUrl}/api/form/contact`, {
@@ -80,16 +86,16 @@ export const Contact = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(contact),
-        credentials: 'include'
+        body: JSON.stringify(contactWithPhone),
+        credentials: "include",
       });
 
       if (response.ok) {
-        toast.success("Successful");
+        toast.success("Form submitted successfully.");
         setContact({
           username: "",
           email: "",
-          contactNo: "",
+          phone: "",
           profession: "",
           companyName: "",
           salary: "",
@@ -97,14 +103,15 @@ export const Contact = () => {
           loanAmount: "",
           loanType: "",
         });
+        setPhone("");
+        setOtpVerified(false); // Reset OTP verification status
       } else {
         console.log("Error inside response", "error");
       }
-    } catch (e) {
-      console.log("Error Occurred: " + e.message);
+    } catch (error) {
+      console.log("Error Occurred: " + error);
     }
   };
-
   return (
     <>
       <section className="section-contact">

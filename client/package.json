@@ -10,6 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "chart": "^0.1.2",
+    "chart.js": "^4.4.3",
+    "dotenv": "^16.4.5",
     "firebase": "^10.12.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
