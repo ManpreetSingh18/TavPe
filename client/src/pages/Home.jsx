@@ -14,11 +14,6 @@ export const Home = () => {
 
 
 
-
-
-
-
-
               </p>
               <div className="btn btn-group">
                 <a href="/contact">
@@ -75,8 +70,8 @@ export const Home = () => {
               <a href="/contact">
                 <button className="btn">Apply Loan now</button>
               </a>
-              <a href="/services">
-                <button className="btn secondary-btn">Our Services</button>
+              <a href="/emi">
+                <button className="btn secondary-btn">Calculate Emi</button>
               </a>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { numberWithCommas } from "../utils/config";
-
+import "../emi.css"
 function SliderInput({
   title,
   state,
@@ -28,7 +28,7 @@ function SliderInput({
           value={state}
           onChange={onChange}
         />
-        <div className="lables">
+        <div className="labels">
           <label>{labelMin ?? numberWithCommas(min)}</label>
           <b>{numberWithCommas(state)}</b>
           <label>{labelMax ?? numberWithCommas(max)}</label>

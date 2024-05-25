@@ -706,6 +706,9 @@ a:hover {
 /*------------------------------------------*/
 /* Admin contact us page Css*/
 /*------------------------------------------*/
+/* Admin Panel Section */
+
+/* Admin Panel Section */
 .admin-contacts-section {
   padding: 20px;
   color: black;
@@ -716,13 +719,13 @@ a:hover {
   margin-bottom: 20px;
 }
 
-.container.admin-users {
+.container.admin-contacts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
-.container.admin-users div {
+.container.admin-contacts div {
   border: 1px solid #e0e0e0;
   background-color: #fff;
   padding: 20px;
@@ -730,12 +733,12 @@ a:hover {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.container.admin-users div p {
+.container.admin-contacts div p {
   margin: 0;
   margin-bottom: 10px;
 }
 
-.container.admin-users div button {
+.container.admin-contacts div button {
   padding: 10px 20px;
   background-color: #ff6f61;
   color: #fff;
@@ -745,9 +748,10 @@ a:hover {
   transition: background-color 0.3s ease;
 }
 
-.container.admin-users div button:hover {
+.container.admin-contacts div button:hover {
   background-color: #ff5246;
 }
+
 /* 
 /* css file for making learn more button responsive */
 /* Add the following CSS at the end of your existing CSS file */

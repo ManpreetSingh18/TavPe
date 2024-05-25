@@ -14,6 +14,7 @@ import { AdminLayout } from "./components/layouts/Admin-Layout";
 import { AdminContacts } from "./pages/Admin-Contacts";
 import { AdminUsers } from "./pages/Admin-Users";
 import { AdminUpdate } from "./pages/Admin-Update";
+import {EmiCalculator} from "./pages/emi";
 import  PhoneSignin  from "./pages/PhoneSignin";
 
 const App = () => {
@@ -30,7 +31,7 @@ const App = () => {
           <Route path="/logout" element={<Logout />} />
           <Route path="/service" element={<Service />} />
           <Route path="/otp" element={<PhoneSignin />} />
-          {/* <Route path="/emi" element={<EmiCalculator />} /> */}
+          <Route path="/emi" element={<EmiCalculator />} />
           <Route path="*" element={<Error />} />
 
           <Route path="/admin" element={<AdminLayout />}>

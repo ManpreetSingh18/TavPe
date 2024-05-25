@@ -104,7 +104,9 @@ export const Contact = () => {
           loanType: "",
         });
         setPhone("");
+        setOtp("");
         setOtpVerified(false); // Reset OTP verification status
+        
       } else {
         console.log("Error inside response", "error");
       }
@@ -171,6 +173,7 @@ export const Contact = () => {
                   onChange={(e) => setOtp(e.target.value)}
                   type="text"
                   placeholder="Enter Otp"
+                  value={otp} 
                 />
                 <button
                   type="button"

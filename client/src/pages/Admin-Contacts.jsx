@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../store/auth";
 import { toast } from 'react-toastify';
 import { baseUrl } from "../../Urls";
+
+
 export const AdminContacts = () => {
     const [contactData, setContactData] = useState([]);
     const { authorizationToken } = useAuth();
@@ -57,7 +59,6 @@ export const AdminContacts = () => {
 
                     return (
                         <div key={index}>
-                            
                             <p>Name: {username}</p>
                             <p>Email: {email}</p>
                             <p>Contact No: {contactNo}</p>
