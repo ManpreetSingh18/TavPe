@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import "../emi.css";
 import { tenureData } from "../utils/constants";
@@ -89,9 +90,9 @@ export const EmiCalculator = () => {
         />
 
         <TextInput
-          title={"Processing Fee(in %)"} 
-          state={fee} 
-          setState={setFee} 
+          title={"Processing Fee(in %)"}
+          state={fee}
+          setState={setFee}
         />
 
         <SliderInput
@@ -128,6 +129,9 @@ export const EmiCalculator = () => {
             );
           })}
         </div>
+        <NavLink to="/contact">
+          <button href="/contact">Apply Now</button>
+        </NavLink>
       </div>
     </div>
   );
