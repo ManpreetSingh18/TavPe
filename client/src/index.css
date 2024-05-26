@@ -219,13 +219,16 @@ button {
       margin-bottom: 3.2rem;
     }
   }
+
   & .container {
     padding-top: 3.2rem;
   }
+
   & .contact-img {
     display: flex;
     justify-content: start;
     align-items: center;
+
     & img {
       width: 80%;
       height: auto;
@@ -238,16 +241,25 @@ button {
       flex-direction: column;
       gap: 3.2rem;
     }
+    
     & label {
       display: block;
       margin-bottom: 1.2rem;
       text-transform: capitalize;
+      font-size: 1.8rem;  /* Set the desired font size */
+      line-height: 1.56;  /* Set the desired line height */
+      letter-spacing: 0.1rem;  /* Set the desired letter spacing */
+      word-spacing: 0.06rem;  /* Set the desired word spacing */
     }
 
     & input,
     textarea {
       width: 80%;
       padding: 0.4rem 0.6rem;
+      font-size: 1.8rem;  /* Set the desired font size */
+      line-height: 1.56;  /* Set the desired line height */
+      letter-spacing: 0.1rem;  /* Set the desired letter spacing */
+      word-spacing: 0.06rem;  /* Set the desired word spacing */
     }
   }
 }
