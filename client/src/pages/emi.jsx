@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import "../emi.css"
 
 export const EmiCalculator = () => {
   const [loanAmount, setLoanAmount] = useState('');
@@ -40,53 +41,50 @@ export const EmiCalculator = () => {
   };
 
   return (
-    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
-      <div className="bg-white p-12 rounded-lg shadow-md w-2/3 max-w-4xl">
-        <h1 className="text-4xl font-bold mb-8 text-center">Loan Calculator</h1>
-        <div className="space-y-8">
-          <div className="flex items-center">
-            <label className="w-1/3 text-xl text-gray-700">Loan Amount:</label>
+    <div className="emi-container">
+      <div className="emi-card">
+        <h1 className="emi-heading">Loan Calculator</h1>
+        <div className="emi-inputs">
+          <div className="emi-input">
+            <label>Loan Amount:</label>
             <input
               type="number"
               value={loanAmount}
               onChange={(e) => setLoanAmount(e.target.value)}
-              className="w-2/3 p-4 border border-gray-300 rounded-lg"
             />
           </div>
-          <div className="flex items-center">
-            <label className="w-1/3 text-xl text-gray-700">Annual Interest Rate (%):</label>
+          <div className="emi-input">
+            <label>Annual Interest Rate (%):</label>
             <input
               type="number"
               value={interestRate}
               onChange={(e) => setInterestRate(e.target.value)}
-              className="w-2/3 p-4 border border-gray-300 rounded-lg"
             />
           </div>
-          <div className="flex items-center">
-            <label className="w-1/3 text-xl text-gray-700">Tenure (in years):</label>
+          <div className="emi-input">
+            <label>Tenure (in years):</label>
             <input
               type="number"
               value={tenure}
               onChange={(e) => setTenure(e.target.value)}
-              className="w-2/3 p-4 border border-gray-300 rounded-lg"
             />
           </div>
         </div>
         <button
           onClick={calculateEMI}
-          className="w-full mt-8 p-4 bg-blue-500 text-white text-xl rounded-lg hover:bg-blue-600"
+          className="calculate-btn"
         >
           Calculate EMI
         </button>
         {emi !== null && (
-          <div className="mt-8 text-center text-3xl font-bold">
+          <div className="emi-result">
             <h2>Monthly EMI: {formatToRupees(emi)}</h2>
           </div>
         )}
         {isEmiCalculated && (
           <NavLink to="/contact">
             <button
-              className="w-full mt-4 p-4 bg-green-500 text-white text-xl rounded-lg hover:bg-green-600"
+              className="apply-btn"
             >
               Apply Now
             </button>

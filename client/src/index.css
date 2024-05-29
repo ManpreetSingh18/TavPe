@@ -6,9 +6,6 @@
   font-family: Urbanist, system-ui, Avenir, Helvetica, Arial, sans-serif;
   
 }
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 :root {
   /* --bg-color: #f4f3ff;
@@ -159,6 +156,7 @@ button {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   padding: 2rem;
+  
 }
 
 .section-analytics .div1 {
@@ -308,7 +306,9 @@ button:hover {
 a:hover {
   color: var(--dark-color);
 }
-
+.main-heading h1{
+  text-align: center !important;
+}
 /* pseduo elements  */
 .main-heading {
   position: relative;
@@ -489,6 +489,9 @@ a:hover {
 /** -----------------------
 ** services section css
 ** -------------------------  */
+
+
+
 .section-services {
   & .container:first-child {
     padding: 0;
@@ -532,8 +535,12 @@ a:hover {
       font-size: 3.2rem;
       margin: 1.2rem 0 2.4rem 0;
     }
+    /* & .container:h1 {
+      text-align: center;
+    } */
   }
 }
+
 
 .card-details p:last-child {
   margin-bottom: 0;

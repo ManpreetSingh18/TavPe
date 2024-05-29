@@ -8,6 +8,7 @@ export const About = () => {
       <main>
         <section className="section-hero">
           <div className="container grid grid-two-cols">
+            
             <div className="hero-content">
               {/* <p>We care to cure your Health</p> */}
               <p>Welcome {user ? user.username : "to our website"}</p>

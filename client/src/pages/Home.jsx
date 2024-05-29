@@ -1,11 +1,15 @@
 import { Analytics } from "../components/Analytics";
-
+import { Carousel } from "./carousel";
+import { Service } from "./Service";
 export const Home = () => {
   return (
     <>
       <main>
         <section className="section-hero">
-          <div className="container grid grid-two-cols">
+        <Carousel/>
+        
+          {/* <div className="container grid grid-two-cols">
+            
             <div className="hero-content">
               <p>Achieve your finacial goal</p>
               <h1>Loans for For Daily Expenses</h1>
@@ -25,7 +29,7 @@ export const Home = () => {
               </div>
             </div>
 
-            {/* hero images  */}
+           
             <div className="hero-image">
               <img
                 src="https://public-assets.prod.navi-tech.in/navi-website-assests/images/personal-loan/Web/CL_web.webp"
@@ -34,19 +38,22 @@ export const Home = () => {
                 height="500"
               />
             </div>
-          </div>
+          </div> */}
         </section>
       </main>
 
       {/* 2nd section  */}
 
       <Analytics />
+      <Service/>
       {/* <Analytics /> */}
 
       {/* 3rd section  */}
-      <section className="section-hero">
+        
+      {/* commented Section */}
+      {/* <section className="section-hero">
         <div className="container grid grid-two-cols">
-          {/* hero images  */}
+          
           <div className="hero-image">
             <img
               src="https://navi.com/static/media/InterestRateAndChargesImgNew.ea1a2610.webp"
@@ -76,7 +83,8 @@ export const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
+      
     </>
   );
 };
