@@ -5,7 +5,7 @@ const contactForm = require("../controllers/contact-controller");
 
 // Define CORS options
 const corsOptions = {
-  origin: ["http://localhost:5173","https://tav-prasad.vercel.app"] // Allow requests from this origin
+  origin: ["http://localhost:5173","https://tav-prasad.vercel.app","https://www.tavpe.com"] // Allow requests from this origin
 };
 
 // Apply CORS middleware to the router with specified options
