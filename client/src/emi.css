@@ -1,92 +1,104 @@
-.App {
-    font-family: 'Poppins', sans-serif;
-    text-align: center;
-    width: 100%;
+/* src/LoanCalculator.css */
+
+
+  .loan-calculator-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     padding: 20px;
-    background-color: #f7f7f7;
-}
-
-.emi-container {
-    background-color: white;
+    min-height: calc(100vh - 60px); /* Adjust the height considering header and footer */
+    background-color: #f0f0f0;
+  }
+  
+  .loan-calculator {
+    width: 100%;
+    max-width: 500px;
+    margin: 20px;
     padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Reduced gap between elements */
-}
-
-.title {
-    font-weight: 700;
-    font-size: 1.5em;
-    margin-bottom: 15px;
-}
-
-input[type="text"], input[type="number"], .slider input {
-    width: 100%;
-    padding: 8px; /* Reduced padding */
-    margin: 5px 0; /* Reduced margin */
-    box-sizing: border-box;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.slider {
-    width: 100%; /* Make the slider take full width */
-}
-
-.labels {
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .loan-calculator h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-row {
     display: flex;
     justify-content: space-between;
-    font-size: 0.9em;
-}
-
-.tenure-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    justify-content: center;
-}
-
-.tenure {
-    width: calc(33.333% - 10px); /* Adjusting width */
-    min-width: 80px;
-    height: 40px; /* Reduced height */
-    border: none;
-    border-radius: 20px; /* Adjusted border radius */
-    background-color: gainsboro;
-    font-size: 1.2em; /* Increased font size */
-    font-weight: 500;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    cursor: pointer;
-}
-
-.tenure:hover {
-    background-color: #b0c4de;
-}
-
-.selected {
-    background-color: #009ad6;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+  
+  .input-row label {
+    width: 40%;
+    text-align: left;
+    font-size: 16px;
+    white-space: nowrap;
+  }
+  
+  .input-row input {
+    width: 58%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .loan-calculator button {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
     color: white;
-}
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-    .tenure {
-        width: calc(50% - 10px);
-        font-size: 1em; /* Adjusted font size for smaller screens */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .loan-calculator button:hover {
+    background-color: #0056b3;
+  }
+  
+  .emi-output {
+    margin-top: 30px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+  }
+  
+  @media (max-width: 480px) {
+    .loan-calculator {
+      padding: 15px;
     }
-
-    .title {
-        font-size: 1.2em;
+  
+    .input-row {
+      flex-direction: column;
+      align-items: flex-start;
     }
-
-    .emi-container {
-        padding: 15px;
+  
+    .input-row label,
+    .input-row input {
+      width: 100%;
     }
-}
+  
+    .loan-calculator button {
+      font-size: 16px;
+    }
+  
+    .emi-output {
+      font-size: 20px;
+    }
+  }
+  

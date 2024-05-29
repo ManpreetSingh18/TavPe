@@ -1,137 +1,97 @@
-import React, { useEffect } from "react";
-import { NavLink } from "react-router-dom";
-import { useState } from "react";
-import "../emi.css";
-import { tenureData } from "../utils/constants";
-import { numberWithCommas } from "../utils/config";
-import TextInput from "../components/text-input";
-import SliderInput from "../components/silder-input";
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 export const EmiCalculator = () => {
-  const [cost, setCost] = useState(0);
-  const [interest, setInterest] = useState(10);
-  const [fee, setFee] = useState(1);
-  const [downPayment, setDownPayment] = useState(0);
-  const [tenure, setTenure] = useState(12);
-  const [emi, setEmi] = useState(0);
+  const [loanAmount, setLoanAmount] = useState('');
+  const [interestRate, setInterestRate] = useState('');
+  const [tenure, setTenure] = useState('');
+  const [emi, setEmi] = useState(null);
+  const [isEmiCalculated, setIsEmiCalculated] = useState(false);
 
-  const calculateEmi = (downPayment) => {
-    if (!cost) return;
+  const calculateEMI = () => {
+    const principal = parseFloat(loanAmount);
+    const annualInterestRate = parseFloat(interestRate);
+    const months = parseFloat(tenure) * 12;
 
-    const loanAmt = cost - downPayment;
-    const rateOfInterest = interest / 100;
-    const noOfYears = tenure / 12;
-    const emi =
-      (loanAmt * rateOfInterest * (1 + rateOfInterest) ** noOfYears) /
-      ((1 + rateOfInterest) ** noOfYears - 1);
-    return Number(emi / 12).toFixed(0);
-  };
-
-  const updateEmi = (e) => {
-    if (!cost) return;
-
-    const dp = Number(e.target.value);
-    setDownPayment(dp.toFixed(0));
-
-    const emi = calculateEmi(dp);
-    setEmi(emi);
-  };
-
-  const calculateDP = (emi) => {
-    if (!cost) return;
-    const downPaymentPercent = 100 - (emi / calculateEmi(0)) * 100;
-
-    return Number((downPaymentPercent / 100) * cost).toFixed(0);
-  };
-
-  const updateDownPayment = (e) => {
-    if (!cost) return;
-    const emi = Number(e.target.value);
-    setEmi(emi.toFixed(0));
-
-    const dp = calculateDP(emi);
-    setDownPayment(dp.toFixed(0));
-  };
-
-  useEffect(() => {
-    if (!(cost > 0)) {
-      setDownPayment(0);
-      setEmi(0);
+    if (!principal || !annualInterestRate || !months) {
+      alert("Please enter valid numbers");
+      return;
     }
-    const emi = Number(downPayment);
-    setEmi(emi.toFixed(0));
-  }, [tenure, cost]);
 
-  const totalDownPayment = () => {
-    return numberWithCommas(
-      (Number(downPayment) + (cost - downPayment) * (fee / 100)).toFixed(0)
-    );
+    const monthlyInterestRate = annualInterestRate / (12 * 100);
+    const emiAmount = (principal * monthlyInterestRate * Math.pow(1 + monthlyInterestRate, months)) / (Math.pow(1 + monthlyInterestRate, months) - 1);
+
+    // Round off to the nearest integer
+    const roundedEmiAmount = Math.round(emiAmount);
+
+    setEmi(roundedEmiAmount);
+    setIsEmiCalculated(true);
   };
 
-  const totalEmi = () => {
-    return numberWithCommas((emi * tenure).toFixed(0));
+  const formatToRupees = (amount) => {
+    if (isNaN(amount)) return amount;
+
+    return new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'INR',
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    }).format(amount);
   };
 
   return (
-    <div className="App">
-      <div className="emi-container">
-        <span className="title">EMI Calculator</span>
-
-        <TextInput
-          title={"Total Cost Of Asset"}
-          state={cost}
-          setState={setCost}
-        />
-
-        <TextInput
-          title={"Interest Rate(in %)"}
-          state={interest}
-          setState={setInterest}
-        />
-
-        <TextInput
-          title={"Processing Fee(in %)"}
-          state={fee}
-          setState={setFee}
-        />
-
-        <SliderInput
-          title="Down Payment"
-          underlineTitle={`Total Down Payment - ${totalDownPayment()}`}
-          onChange={updateEmi}
-          state={downPayment}
-          min={0}
-          max={cost}
-          labelMin={"0%"}
-          labelMax={"100%"}
-        />
-
-        <SliderInput
-          title="Loan Per Month"
-          underlineTitle={`Total Loan Amount - ${totalEmi()}`}
-          onChange={updateDownPayment}
-          state={emi}
-          min={calculateEmi(cost)}
-          max={calculateEmi(0)}
-        />
-
-        <span className="title">Tenure</span>
-        <div className="tenure-container">
-          {tenureData.map((t) => {
-            return (
-              <button
-                key={t}
-                className={`tenure ${t === tenure ? "selected" : ""}`}
-                onClick={() => setTenure(t)}
-              >
-                {t}
-              </button>
-            );
-          })}
+    <div className="flex justify-center items-center min-h-screen bg-gray-100 p-6">
+      <div className="bg-white p-12 rounded-lg shadow-md w-2/3 max-w-4xl">
+        <h1 className="text-4xl font-bold mb-8 text-center">Loan Calculator</h1>
+        <div className="space-y-8">
+          <div className="flex items-center">
+            <label className="w-1/3 text-xl text-gray-700">Loan Amount:</label>
+            <input
+              type="number"
+              value={loanAmount}
+              onChange={(e) => setLoanAmount(e.target.value)}
+              className="w-2/3 p-4 border border-gray-300 rounded-lg"
+            />
+          </div>
+          <div className="flex items-center">
+            <label className="w-1/3 text-xl text-gray-700">Annual Interest Rate (%):</label>
+            <input
+              type="number"
+              value={interestRate}
+              onChange={(e) => setInterestRate(e.target.value)}
+              className="w-2/3 p-4 border border-gray-300 rounded-lg"
+            />
+          </div>
+          <div className="flex items-center">
+            <label className="w-1/3 text-xl text-gray-700">Tenure (in years):</label>
+            <input
+              type="number"
+              value={tenure}
+              onChange={(e) => setTenure(e.target.value)}
+              className="w-2/3 p-4 border border-gray-300 rounded-lg"
+            />
+          </div>
         </div>
-        <NavLink to="/contact">
-          <button href="/contact">Apply Now</button>
-        </NavLink>
+        <button
+          onClick={calculateEMI}
+          className="w-full mt-8 p-4 bg-blue-500 text-white text-xl rounded-lg hover:bg-blue-600"
+        >
+          Calculate EMI
+        </button>
+        {emi !== null && (
+          <div className="mt-8 text-center text-3xl font-bold">
+            <h2>Monthly EMI: {formatToRupees(emi)}</h2>
+          </div>
+        )}
+        {isEmiCalculated && (
+          <NavLink to="/contact">
+            <button
+              className="w-full mt-4 p-4 bg-green-500 text-white text-xl rounded-lg hover:bg-green-600"
+            >
+              Apply Now
+            </button>
+          </NavLink>
+        )}
       </div>
     </div>
   );

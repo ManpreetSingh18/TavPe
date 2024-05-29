@@ -36,7 +36,7 @@ export const Navbar = () => {
                 <NavLink to="/contact" onClick={toggleMenu}>Contact </NavLink>
               </li>
               <li>
-                <NavLink to="/emi" onClick={toggleMenu}>Calculate Emi </NavLink>
+                <NavLink to="/emi" onClick={toggleMenu}>Calculate EMI </NavLink>
               </li>
               {isLoggedIn ? (
                 <li>

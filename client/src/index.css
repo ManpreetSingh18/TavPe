@@ -6,6 +6,9 @@
   font-family: Urbanist, system-ui, Avenir, Helvetica, Arial, sans-serif;
   
 }
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
   /* --bg-color: #f4f3ff;
