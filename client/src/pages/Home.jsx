@@ -3,7 +3,6 @@ import { Carousel } from "./carousel";
 import { Service } from "./Service";
 export const Home = () => {
   return (
-    //checking the staging directory
     <>
       <main>
         <section className="section-hero">
