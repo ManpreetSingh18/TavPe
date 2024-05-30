@@ -8,40 +8,42 @@ export const About = () => {
       <main>
         <section className="section-hero">
           <div className="container grid grid-two-cols">
-            
             <div className="hero-content">
               {/* <p>We care to cure your Health</p> */}
               <p>Welcome {user ? user.username : "to our website"}</p>
-              <h1>Why Choose Us? </h1>
+              <h1>About TavPe? </h1>
               <p>
-                Expertise: Our team comprises seasoned financial professionals
-                dedicated to staying abreast of the ever-changing landscape of
-                the lending industry.
+                About TavPrasad Loans At TavPrasad Loans, we understand that
+                financial needs can arise unexpectedly and sometimes require
+                urgent attention. That's why we are committed to providing
+                hassle-free loan solutions tailored to meet your specific
+                requirements.
+              </p>
+              <h2>Why Choose us? </h2>
+              <p>
+                Flexible Loan Options: Whether you need a personal loan for
+                unexpected expenses or a business loan to fuel growth, we offer
+                a range of flexible loan options to suit your needs.
               </p>
               <p>
-                Personalization: Recognizing the individuality of each borrower,
-                we craft bespoke solutions tailored precisely to your financial
-                requirements and aspirations. 
+                Quick Approval Process: We understand the importance of time,
+                which is why we have streamlined our approval process to ensure
+                quick turnaround times.
               </p>
               <p>
-                Customer-Centric Focus: Your satisfaction is paramount to us. We
-                go above and beyond to provide unparalleled support, addressing
-                your concerns with diligence and care.
+                Competitive Interest Rates: Our aim is to make borrowing
+                affordable for everyone. That's why we offer competitive
+                interest rates,
               </p>
               <p>
-                Affordability: Offering competitive rates without compromising
-                on the quality of service is our promise.
-              </p>
-              <p>
-                Reliability: Depend on us to be your steadfast partner in
-                navigating the lending landscape. We guarantee round-the-clock
-                availability and steadfast support.
+                Dedicated Customer Support: Have questions or need assistance?
+                Our team of experienced professionals is here to help
               </p>
 
               <div className="btn btn-group">
                 <NavLink to="/contact">
                   <button className="btn">Apply for Loan</button>
-                </NavLink >
+                </NavLink>
                 <NavLink to="/">
                   <button className="btn secondary-btn">learn more</button>
                 </NavLink>
