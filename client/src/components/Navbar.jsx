@@ -30,9 +30,9 @@ export const Navbar = () => {
               <li>
                 <NavLink to="/about" onClick={toggleMenu}>About </NavLink>
               </li>
-              {/* <li>
-                <NavLink to="/Service" onClick={toggleMenu}>Services </NavLink>
-              </li> */}
+              <li>
+                <NavLink to="/Service" onClick={toggleMenu}>Personal Loan </NavLink>
+              </li>
               
               <li>
                 <NavLink to="/contact" onClick={toggleMenu}>Contact </NavLink>
