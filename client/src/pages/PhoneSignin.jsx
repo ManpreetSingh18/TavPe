@@ -8,7 +8,7 @@ import {auth} from "../components/firebase/setup";
 import { toast } from "react-toastify";
 export default function PhoneSignin() {
 
-
+//NOT IN USE THIS PAGE ONLY FOR LERNING PURPOSE AND TESTING PURPOSE 
   const [phone, setPhone] = useState("");
   const [user,setUser] = useState(null);
   const [otp,setOtp]=useState("");

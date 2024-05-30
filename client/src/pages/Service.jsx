@@ -8,7 +8,7 @@ export const Service = () => {
       <div className="container">
         {/* <h1 className="main-heading" >Services</h1> */}
       </div>
-      <h1  >Our Services</h1>
+      <h1 style={{marginTop:30}}>Our Services</h1>
       <div className="container grid grid-three-cols">
         {services.map((currElem, index) => {
           const { service, description, price, provider, imageUrl } = currElem;

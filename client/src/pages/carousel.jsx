@@ -49,21 +49,21 @@ export const Carousel = () => {
           <li className="slide">
             <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Property Loan Image" />
             <div className="slide-content">
-              <h2>Looking For Property Loan</h2>
+              <h2>Buisness Loan @ 14.5%</h2>
               <a href="contact" className="button">Apply Now</a>
             </div>
           </li>
           <li className="slide">
             <img src="https://cdn.pixabay.com/photo/2024/04/23/16/14/ai-generated-8715598_1280.jpg" alt="Home Loan Image" />
             <div className="slide-content">
-              <h2>Looking For Home Loan</h2>
+              <h2>Home Loan @ 8.5%</h2>
               <a href="contact" className="button">Apply Now</a>
             </div>
           </li>
           <li className="slide">
             <img src="https://cdn.pixabay.com/photo/2018/08/17/14/26/piggy-3612929_1280.jpg" alt="Personal Loan Image" />
             <div className="slide-content">
-              <h2>Looking For Personal Loan</h2>
+              <h2>Personal Loan and Personal Overdraft @10.99%</h2>
               <a href="contact" className="button">Apply Now</a>
             </div>
           </li>

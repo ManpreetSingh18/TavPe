@@ -44,7 +44,7 @@ export const Home = () => {
 
       {/* 2nd section  */}
 
-      <Analytics />
+      
       <Service/>
       {/* <Analytics /> */}
 
@@ -84,7 +84,7 @@ export const Home = () => {
           </div>
         </div>
       </section> */}
-      
+      <Analytics />
     </>
   );
 };
