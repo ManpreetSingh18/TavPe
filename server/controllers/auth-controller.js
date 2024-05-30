@@ -13,9 +13,10 @@ const bcrypt=require("bcryptjs");
 const home=async(req,res)=>{
     try{
         res.status(200);
-        res.send("Welcome to world best merns seried TavPrasad.com using router");
+        res.send("Welcome to world best Loan Website TavPe.com ");
     }catch(error){
-
+        //console.log("some rror")
+        next(error);
     }
 }
 
@@ -94,7 +95,7 @@ const login =async function(req,res){
 const user=async(req,res)=>{
     try{
         const userData=req.user;
-        console.log(userData);
+        //console.log(userData);
         res.status(200).json({userData});
     }catch(error){
         console.log(`Internal Server Error ${error}`);

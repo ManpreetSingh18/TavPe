@@ -2,9 +2,10 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import "./Navbar.css";
 import { useAuth } from "../store/auth";
+import { AdminContacts } from "../pages/Admin-Contacts";
 
 export const Navbar = () => {
-  const { isLoggedIn } = useAuth();
+  const { isLoggedIn,isAdmin } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -52,6 +53,35 @@ export const Navbar = () => {
                   </li>
                 </>
               )}
+
+              { isAdmin
+              ?
+              (
+                <li>
+                   <NavLink 
+              to="/admin/contacts" 
+              style={{
+              
+                backgroundColor: '#800000', // Bootstrap primary color
+                border: '3px solid ', // Border with a darker shade
+                borderRadius: '5px',
+                transition: 'background-color 0.3s ease',
+                color: 'white',
+                padding: '8px',
+                margin: '10px',
+                fontSize: '15px',
+                fontWeight: 'bold',
+              }}
+              
+            >
+              Admin
+            </NavLink>
+                </li>
+              )
+              :(<>
+              </>)
+
+              }
             </ul>
           </nav>
         </div>

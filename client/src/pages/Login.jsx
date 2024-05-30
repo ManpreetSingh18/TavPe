@@ -17,7 +17,7 @@ export const Login = () => {
 
   // handling the input values
   const handleInput = (e) => {
-    console.log(e);
+    //console.log(e);
     let name = e.target.name;
     let value = e.target.value;
     setUser({
@@ -47,7 +47,7 @@ export const Login = () => {
         toast.success("Login successful");
         setUser({ email: "", password: "" });
 
-        console.log(res_Data);
+        //console.log(res_Data);
         navigate("/");
       } else {
         toast.error(res_Data.extraDetails ? res_Data.extraDetails:res_Data.message);
