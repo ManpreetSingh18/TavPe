@@ -6,7 +6,7 @@ import { Register } from "./pages/Register";
 import { Login } from "./pages/Login";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-import { Navbar1 } from "./components/Navbar1";
+
 import { Error } from "./pages/Error";
 import { Footer } from "./components/Footer/Footer";
 import { Logout } from "./pages/logout";
@@ -35,7 +35,7 @@ const App = () => {
           <Route path="/otp" element={<PhoneSignin />} />
           <Route path="/emi" element={<EmiCalculator />} />
           <Route path="/emi" element={<EmiCalculator />} />
-          <Route path="/navbar1" element={<Navbar1 />} />
+          
           <Route path="*" element={<Error />} />
 
           <Route path="/admin" element={<AdminLayout />}>
