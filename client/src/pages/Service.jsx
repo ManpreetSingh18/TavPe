@@ -25,7 +25,7 @@ export const Service = () => {
               <div className="card-details">
                 <div className="grid grid-two-cols">
                   {/* <p>{provider}</p> */}
-                  <a href="/contact">
+                  <a href="/applyloan">
                     <button className="btn service-btn">Apply Now</button>
                   </a>
                   <p>{price}</p>

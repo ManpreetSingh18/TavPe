@@ -35,7 +35,7 @@ export const Navbar = () => {
               </li> */}
               
               <li>
-                <NavLink to="/contact" onClick={toggleMenu}>Contact </NavLink>
+                <NavLink to="/applyloan" onClick={toggleMenu}>Apply For Loan</NavLink>
               </li>
               <li>
                 <NavLink to="/emi" onClick={toggleMenu}>Calculate EMI </NavLink>
