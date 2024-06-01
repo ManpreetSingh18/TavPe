@@ -41,7 +41,7 @@ export const About = () => {
               </p>
 
               <div className="btn btn-group">
-                <NavLink to="/contact">
+                <NavLink to="/applyloan">
                   <button className="btn">Apply for Loan</button>
                 </NavLink>
                 <NavLink to="/emi">

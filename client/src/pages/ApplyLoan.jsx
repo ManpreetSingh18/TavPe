@@ -7,7 +7,7 @@ import "react-phone-input-2/lib/style.css";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "../components/firebase/setup";
 
-export const Contact = () => {
+export const ApplyLoan= () => {
   const [contact, setContact] = useState({
     username: "",
     email: "",
@@ -118,7 +118,7 @@ export const Contact = () => {
     <>
       <section className="section-contact">
         <div className="contact-content container">
-          <h1 className="main-heading">Contact Us</h1>
+          <h1 className="main-heading">Apply For Loan</h1>
         </div>
         <div className="container grid grid-two-cols">
           <div className="contact-img">
