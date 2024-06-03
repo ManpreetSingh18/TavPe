@@ -4,10 +4,13 @@ export const Service = () => {
   const { services } = useAuth();
 
   return (
+    
     <section className="section-services">
       <div className="container">
+      
         {/* <h1 className="main-heading" >Services</h1> */}
       </div>
+      
       <h1 style={{marginTop:30}}>Our Services</h1>
       <div className="container grid grid-three-cols">
         {services.map((currElem, index) => {

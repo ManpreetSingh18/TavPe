@@ -1,4 +1,8 @@
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 * {
   margin: 0;
   padding: 0;
@@ -208,9 +212,9 @@ button {
 
 
 /***** End analytics Section *****/
-/* contact section css */
+/* Apply Loan(Formerly Contact) section css */
 /** -----------------------
-** contact section css
+** Apply Loan section css
 ** -------------------------  */
 .section-contact {
   & .contact-content {
@@ -261,6 +265,7 @@ button {
       line-height: 1.56;  /* Set the desired line height */
       letter-spacing: 0.1rem;  /* Set the desired letter spacing */
       word-spacing: 0.06rem;  /* Set the desired word spacing */
+      border: 1px solid black;
     }
   }
 }
@@ -324,6 +329,7 @@ a:hover {
     background-color: var(--btn-color);
   }
 }
+/*Remove dark mode */
 /* 
 @media (prefers-color-scheme: light) {
   :root {
@@ -339,7 +345,7 @@ a:hover {
   }
 } */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     color: white;
     background-color: black;
@@ -347,10 +353,56 @@ a:hover {
   a:hover,
   a.active {
     color: #747bff;
-  }
+  } */
   /* button {
     background-color: #f9f9f9;
   } */
+
+/* To add box to profession select option */
+.selectProfession :nth-child(2){
+  text-align: center;
+  width: 15vw;
+  height: 3vh;
+  font-size: 1.2rem;
+  border: 1px solid black ;
+}
+/* To add box to loan select option */
+.selectLoan :nth-child(2){
+  text-align: center;
+  width: 15vw;
+  height: 3vh;
+  font-size: 1.2rem;
+  border: 1px solid black ;
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .selectProfession :nth-child(2) {
+    width: 30vw; /* Adjust width for smaller screens */
+    margin: 0 auto; /* Center horizontally */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .selectProfession {
+    width: 50vw; /* Further adjust width for even smaller screens */
+    margin: 0 auto; 
+  }
+}
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .selectLoan :nth-child(2) {
+    width: 30vw; /* Adjust width for smaller screens */
+    margin: 0 auto; /* Center horizontally */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .selectLoan{
+    width: 50vw; /* Further adjust width for even smaller screens */
+    margin: 0 auto; 
+  }
 }
 /* error page  */
 #error-page {
@@ -457,6 +509,7 @@ a:hover {
     & input {
       width: 80%;
       padding: 0.6rem 0.6rem;
+      border: 1px solid black;
     }
 
     & button {
@@ -560,6 +613,8 @@ a:hover {
     min-height: 40rem;
   }
 }
+
+
 
 @media (width <= 998px) {
   .grid-two-cols {
