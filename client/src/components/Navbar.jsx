@@ -17,7 +17,7 @@ export const Navbar = () => {
       <header>
         <div className="container">
           <div className="logo-brand">
-            <NavLink to="/">TavPrasad</NavLink>
+            <NavLink to="/">TavPe</NavLink>
           </div>
           <button className="hamburger" aria-label="Toggle navigation" onClick={toggleMenu}>
             &#9776;

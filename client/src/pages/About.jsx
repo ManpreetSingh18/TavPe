@@ -13,7 +13,7 @@ export const About = () => {
               <p>Welcome {user ? user.username : "to our website"}</p>
               <h1>About TavPe? </h1>
               <p>
-                About TavPrasad Loans At TavPrasad Loans, we understand that
+                About TavPe Loans At TavPe Loans, we understand that
                 financial needs can arise unexpectedly and sometimes require
                 urgent attention. That's why we are committed to providing
                 hassle-free loan solutions tailored to meet your specific
