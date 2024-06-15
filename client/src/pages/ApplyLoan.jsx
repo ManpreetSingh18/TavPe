@@ -189,9 +189,9 @@ export const ApplyLoan= () => {
                   onChange={handleInput}
                 />
               </div>
-
-              <div>
-                <label htmlFor="profession">Profession</label>
+{/* make to handle box in css  */}
+              <div className="selectProfession"> 
+                <label htmlFor="profession">Type of Profession</label>
                 <select
                   name="profession"
                   id="profession"
@@ -204,6 +204,10 @@ export const ApplyLoan= () => {
                   <option value="business">Business</option>
                 </select>
               </div>
+              
+
+
+
               {contact.profession === "salaried" && (
                 <>
                   <div>
@@ -258,7 +262,8 @@ export const ApplyLoan= () => {
                   required
                 />
               </div>
-              <div>
+              {/* Make it to handle select box css  */}
+              <div className="selectLoan">
                 <label htmlFor="loanType">Type of Loan</label>
                 <select
                   name="loanType"
