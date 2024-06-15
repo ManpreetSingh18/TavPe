@@ -43,28 +43,28 @@ export const Carousel = () => {
             <img src="https://images.pexels.com/photos/20352684/pexels-photo-20352684/free-photo-of-interior-of-the-genesis-g90-luxury-car.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Car Loan Image" />
             <div className="slide-content">
               <h2>Looking For Car Loan</h2>
-              <a href="contact" className="button">Apply Now</a>
+              <a href="/ApplyLoan" className="button">Apply Now</a>
             </div>
           </li>
           <li className="slide">
             <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Property Loan Image" />
             <div className="slide-content">
               <h2>Buisness Loan @ 14.5%</h2>
-              <a href="contact" className="button">Apply Now</a>
+              <a href="/ApplyLoan" className="button">Apply Now</a>
             </div>
           </li>
           <li className="slide">
             <img src="https://cdn.pixabay.com/photo/2024/04/23/16/14/ai-generated-8715598_1280.jpg" alt="Home Loan Image" />
             <div className="slide-content">
               <h2>Home Loan @ 8.5%</h2>
-              <a href="contact" className="button">Apply Now</a>
+              <a href="/ApplyLoan" className="button">Apply Now</a>
             </div>
           </li>
           <li className="slide">
             <img src="https://cdn.pixabay.com/photo/2018/08/17/14/26/piggy-3612929_1280.jpg" alt="Personal Loan Image" />
             <div className="slide-content">
               <h2>Personal Loan and Personal Overdraft @10.99%</h2>
-              <a href="contact" className="button">Apply Now</a>
+              <a href="/ApplyLoan" className="button">Apply Now</a>
             </div>
           </li>
         </ul>
