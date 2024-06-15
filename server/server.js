@@ -11,7 +11,7 @@ const errorMiddleware = require("./middleware/error-middleware");
 const app = express();
 
 // CORS configuration
-const allowedOrigins = ["https://tav-prasad.vercel.app", "http://localhost:5173","https://www.tavpe.com","https://www.tavpe.in/"];
+const allowedOrigins = ["https://tavpe.vercel.app", "http://localhost:5173","https://www.tavpe.com","https://www.tavpe.in"];
 
 const corsOptions = {
   origin: (origin, callback) => {
