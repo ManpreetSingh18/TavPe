@@ -61,7 +61,7 @@ export const Carousel = () => {
             </div>
           </li>
           <li className="slide">
-            <img src="https://cdn.pixabay.com/photo/2018/08/17/14/26/piggy-3612929_1280.jpg" alt="Personal Loan Image" />
+            <img src="https://cdnblog.etmoney.com/wp-content/uploads/2019/05/personal-loan-1.jpg" alt="Personal Loan Image" />
             <div className="slide-content">
               <h2>Personal Loan and Personal Overdraft @10.99%</h2>
               <a href="/ApplyLoan" className="button">Apply Now</a>

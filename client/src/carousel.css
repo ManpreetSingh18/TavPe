@@ -98,3 +98,52 @@
 .slide-content .button:hover {
   background-color: #0056b3;
 }
+
+/* Media queries for responsiveness */
+@media (max-width: 1200px) {
+  .carousel {
+    width: 90vw;
+    height: 60vh;
+  }
+
+  .slide-content h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel {
+    width: 95vw;
+    height: 70vh;
+  }
+
+  .slide-content h2 {
+    font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    width: 100vw;
+    height: 80vh;
+  }
+
+  .slide-content h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel {
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .slide-content h2 {
+    font-size: 1.25rem;
+  }
+
+  .carousel-button {
+    font-size: 1.5rem;
+  }
+}
