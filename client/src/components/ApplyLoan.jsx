@@ -5,9 +5,9 @@ import { baseUrl } from "../../Urls";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
-import { auth } from "../components/firebase/setup";
+import { auth } from "./firebase/setup";
 
-export const ApplyLoan= () => {
+export const ApplyLoan = ({ typeOfLoan,img}) => {
   const [contact, setContact] = useState({
     username: "",
     email: "",
@@ -17,7 +17,7 @@ export const ApplyLoan= () => {
     salary: "",
     annualIncome: "",
     loanAmount: "",
-    loanType: "",
+    loanType: typeOfLoan,
   });
   const [userData, setUserData] = useState(true);
   const [phone, setPhone] = useState("");
@@ -101,12 +101,11 @@ export const ApplyLoan= () => {
           salary: "",
           annualIncome: "",
           loanAmount: "",
-          loanType: "",
+          loanType: typeOfLoan,
         });
         setPhone("");
         setOtp("");
         setOtpVerified(false); // Reset OTP verification status
-        
       } else {
         console.log("Error inside response", "error");
       }
@@ -118,12 +117,12 @@ export const ApplyLoan= () => {
     <>
       <section className="section-contact">
         <div className="contact-content container">
-          <h1 className="main-heading">Apply For Loan</h1>
+          <h1 className="main-heading">{typeOfLoan} Application</h1>
         </div>
         <div className="container grid grid-two-cols">
           <div className="contact-img">
             <img
-              src="https://www.moneytap.com/mt-home/images/hero-image.webp"
+              src={img}
               alt="we are always ready to help"
             />
           </div>
@@ -173,7 +172,7 @@ export const ApplyLoan= () => {
                   onChange={(e) => setOtp(e.target.value)}
                   type="text"
                   placeholder="Enter Otp"
-                  value={otp} 
+                  value={otp}
                 />
                 <button
                   type="button"
@@ -189,8 +188,8 @@ export const ApplyLoan= () => {
                   onChange={handleInput}
                 />
               </div>
-{/* make to handle box in css  */}
-              <div className="selectProfession"> 
+              {/* make to handle box in css  */}
+              <div className="selectProfession">
                 <label htmlFor="profession">Type of Profession</label>
                 <select
                   name="profession"
@@ -204,9 +203,6 @@ export const ApplyLoan= () => {
                   <option value="business">Business</option>
                 </select>
               </div>
-              
-
-
 
               {contact.profession === "salaried" && (
                 <>
@@ -271,16 +267,17 @@ export const ApplyLoan= () => {
                   value={contact.loanType}
                   onChange={handleInput}
                   required
+                  
                 >
                   <option value="">Select</option>
-                  <option value="personal loan">Personal Loan</option>
-                  <option value="business/professional loan">
-                    Business/Professional Loan
-                  </option>
-                  <option value="car loan">Car Loan</option>
-                  <option value="home/property loan">Home/Property Loan</option>
-                  <option value="health insurance">Health Insurance</option>
-                  <option value="credit card">Credit Card</option>
+                  <option value={typeOfLoan}>{typeOfLoan}</option>
+                <option value="personal loan">Personal Loan</option>
+                <option value="business/professional loan">Business/Professional Loan</option>
+                <option value="car loan">Car Loan</option>
+                <option value="home/property loan">Home/Property Loan</option>
+                <option value="health insurance">Health Insurance</option>
+                <option value="credit card">Credit Card</option>
+                  
                 </select>
               </div>
               <div>
@@ -289,16 +286,17 @@ export const ApplyLoan= () => {
             </form>
           </section>
         </div>
-        <section className="mb-3">
+        {/* <section className="mb-3">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.228644744675!2d77.27068057495754!3d28.652871783157725!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfcbccf7bd899%3A0xf49976cff4de648f!2sLovely%20Associates.!5e0!3m2!1sen!2sin!4v1713638730227!5m2!1sen!2sin"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224345.897969945!2d77.04417211070437!3d28.527554409214392!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b347eb62d%3A0x52c2b7494e204dce!2sNew%20Delhi%2C%20Delhi!5e0!3m2!1sen!2sin!4v1718514747656!5m2!1sen!2sin"
             width="100%"
             height="450"
+            style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
-        </section>
+        </section> */}
       </section>
     </>
   );

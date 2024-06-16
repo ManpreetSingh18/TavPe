@@ -7,6 +7,16 @@ export default {
   theme: {
     extend: {},
   },
+  theme: {
+    extend: {
+      colors: {
+        customRed: {
+          500: '#800000', // Adding your custom color
+        },
+      },
+    },
+  },
+  
   plugins: [],
 }
 

@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -8,7 +7,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Urbanist, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  
 }
 
 :root {
@@ -36,8 +34,6 @@ body {
   /* min-width: 32rem; */
   min-height: 100vh;
 }
-
-
 
 h1 {
   font-size: 5.4rem;
@@ -160,7 +156,6 @@ button {
   grid-template-columns: repeat(4, 1fr);
   gap: 2rem;
   padding: 2rem;
-  
 }
 
 .section-analytics .div1 {
@@ -210,18 +205,71 @@ button {
   }
 }
 
-
 /***** End analytics Section *****/
 /* Apply Loan(Formerly Contact) section css */
 /** -----------------------
 ** Apply Loan section css
 ** -------------------------  */
+
+/** DROPDOWN CODE STARTS**/
+.dropdown-toggle {
+  cursor: pointer;
+  position: relative;
+  background: none;
+  border: none;
+  color: inherit;
+  font-size: inherit;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  color: #800000;
+}
+
+.caret {
+  margin-left: 5px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 50; /* Ensure this is higher than other elements */
+  right: 0;
+}
+
+.dropdown-menu li {
+  color: #800000;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #800000;
+}
+
+.dropdown-menu li a:hover {
+  background-color: #ddd;
+}
+
+.dropdown-menu.block {
+  display: block;
+}
+
+
+/** DROPDOWN CODE ENDS**/
 .section-contact {
   & .contact-content {
     padding: 0;
 
     & h1 {
       margin-bottom: 3.2rem;
+      font-size: 3.5rem;
     }
   }
 
@@ -246,25 +294,25 @@ button {
       flex-direction: column;
       gap: 3.2rem;
     }
-    
+
     & label {
       display: block;
       margin-bottom: 1.2rem;
       text-transform: capitalize;
-      font-size: 1.8rem;  /* Set the desired font size */
-      line-height: 1.56;  /* Set the desired line height */
-      letter-spacing: 0.1rem;  /* Set the desired letter spacing */
-      word-spacing: 0.06rem;  /* Set the desired word spacing */
+      font-size: 1.8rem; /* Set the desired font size */
+      line-height: 1.56; /* Set the desired line height */
+      letter-spacing: 0.1rem; /* Set the desired letter spacing */
+      word-spacing: 0.06rem; /* Set the desired word spacing */
     }
 
     & input,
     textarea {
       width: 80%;
       padding: 0.4rem 0.6rem;
-      font-size: 1.8rem;  /* Set the desired font size */
-      line-height: 1.56;  /* Set the desired line height */
-      letter-spacing: 0.1rem;  /* Set the desired letter spacing */
-      word-spacing: 0.06rem;  /* Set the desired word spacing */
+      font-size: 1.8rem; /* Set the desired font size */
+      line-height: 1.56; /* Set the desired line height */
+      letter-spacing: 0.1rem; /* Set the desired letter spacing */
+      word-spacing: 0.06rem; /* Set the desired word spacing */
       border: 1px solid black;
     }
   }
@@ -300,7 +348,6 @@ button {
   justify-content: center;
 }
 
-
 /*? state rules  */
 
 button:hover {
@@ -311,8 +358,9 @@ button:hover {
 a:hover {
   color: var(--dark-color);
 }
-.main-heading h1{
+.main-heading h1 {
   text-align: center !important;
+  font-size: 1rem;
 }
 /* pseduo elements  */
 .main-heading {
@@ -354,25 +402,25 @@ a:hover {
   a.active {
     color: #747bff;
   } */
-  /* button {
+/* button {
     background-color: #f9f9f9;
   } */
 
 /* To add box to profession select option */
-.selectProfession :nth-child(2){
+.selectProfession :nth-child(2) {
   text-align: center;
   width: 15vw;
   height: 3vh;
   font-size: 1.2rem;
-  border: 1px solid black ;
+  border: 1px solid black;
 }
 /* To add box to loan select option */
-.selectLoan :nth-child(2){
+.selectLoan :nth-child(2) {
   text-align: center;
   width: 15vw;
   height: 3vh;
   font-size: 1.2rem;
-  border: 1px solid black ;
+  border: 1px solid black;
 }
 
 /* Responsive styles */
@@ -386,7 +434,7 @@ a:hover {
 @media screen and (max-width: 480px) {
   .selectProfession {
     width: 50vw; /* Further adjust width for even smaller screens */
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 }
 
@@ -399,9 +447,9 @@ a:hover {
 }
 
 @media screen and (max-width: 480px) {
-  .selectLoan{
+  .selectLoan {
     width: 50vw; /* Further adjust width for even smaller screens */
-    margin: 0 auto; 
+    margin: 0 auto;
   }
 }
 /* error page  */
@@ -543,7 +591,6 @@ a:hover {
 ** services section css
 ** -------------------------  */
 
-
 .card:hover {
   transform: scale(1.05); /* Slightly scale up the card */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Add a shadow effect */
@@ -603,7 +650,6 @@ a:hover {
   }
 }
 
-
 .card-details p:last-child {
   margin-bottom: 0;
 }
@@ -613,8 +659,6 @@ a:hover {
     min-height: 40rem;
   }
 }
-
-
 
 @media (width <= 998px) {
   .grid-two-cols {
@@ -655,16 +699,13 @@ a:hover {
 /* react toastify */
 .toastBody {
   font-family: "Atlas Grotesk Web", Arial, Helvetica, sans-serif;
-  
-  font-size: 1.7rem ;
-}
 
+  font-size: 1.7rem;
+}
 
 /*------------------------------------------*/
 /* Admin User Table Css*/
 /*------------------------------------------*/
-
-
 
 /* Responsive styles */
 
@@ -732,8 +773,6 @@ a:hover {
   background-color: #4d4dff;
 }
 
-
-
 @media screen and (max-width: 768px) {
   .admin-users-section h1 {
     font-size: 3rem;
@@ -787,7 +826,6 @@ a:hover {
     padding: 0.4rem 0.8rem;
   }
 }
-
 
 /*------------------------------------------*/
 /* Admin contact us page Css*/
@@ -868,7 +906,7 @@ a:hover {
     font-size: 1.4rem; /* Further adjust font size */
     padding: 0.8rem 1.2rem; /* Further adjust padding */
   }
-} 
+}
 
 /* css for making registeration form on center in small screen */
 /* Existing CSS for responsive styles */
@@ -917,13 +955,8 @@ a:hover {
   .registration-image img {
     width: 100%;
     height: auto;
-
   }
 }
-
-
-
-
 
 /* Existing CSS for responsive styles */
 @media screen and (max-width: 768px) {
@@ -972,10 +1005,8 @@ a:hover {
     width: 100%;
     height: auto;
   }
-  
+
   .registration-form h1 {
     text-align: center; /* Center align heading text */
   }
 }
-
-
