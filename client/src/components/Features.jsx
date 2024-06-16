@@ -53,7 +53,7 @@ const features = [
     {
       id: 5,
       type: 'Health Insurance',
-      image: 'https://static.vecteezy.com/system/resources/thumbnails/001/214/434/small/health-insurance-design-with-umbrella-protection.jpg',
+      image: 'https://img.freepik.com/premium-vector/health-insurance-concept-woman-offer-health-insurance-doctor_101179-2108.jpg',
       description: 'Protect your health and financial well-being with our comprehensive health insurance plans.',
       benefits: [
         'Extensive coverage options',

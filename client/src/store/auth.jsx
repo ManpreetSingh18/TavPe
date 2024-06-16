@@ -27,6 +27,7 @@ export const AuthProvider = ({ children }) => {
   // tackling the logout functionality
   const LogoutUser = () => {
     setToken("");
+    setIsAdmin(false);
     return localStorage.removeItem("token");
   };
 
@@ -91,7 +92,8 @@ const userAuthentication = async () => {
   useEffect(() => {
     getServices();
     userAuthentication();
-  }, []);
+    
+  }, [token]);
 
   return (
     <AuthContext.Provider
