@@ -1,81 +1,91 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 // Define an array of loan features
+
 const features = [
-    {
-      id: 1,
-      type: 'Personal Loans',
-      image: 'https://blog.stashfin.com/wp-content/uploads/2023/03/22654317_67Z_2112.w012.n001.18A.p20.18-scaled.jpg',
-      description: 'Get the funds you need quickly and easily with our personal loan services.',
-      benefits: [
-        'Easy application process',
-        'Fast processing time',
-        'Competitive interest rates',
-        'Flexible repayment options'
-      ]
-    },
-    {
-      id: 2,
-      type: 'Home Loans',
-      image: 'https://media.istockphoto.com/id/1209904855/vector/people-buying-property-with-bank-credit.jpg?s=612x612&w=0&k=20&c=3Ww725UYrlWepWTn0kmBtgPzrbGCstJF2E1o2nz44LE=',
-      description: 'Secure your dream home with our flexible home loan options.',
-      benefits: [
-        'Flexible repayment terms',
-        'Quick approval process',
-        'Dedicated customer support',
-        'Competitive interest rates'
-      ]
-    },
-    {
-      id: 3,
-      type: 'Car Loans',
-      image: 'https://img.freepik.com/premium-vector/man-rejoices-approval-car-loan-vector-illustration_357257-1155.jpg',
-      description: 'Drive away with your dream car. Explore our hassle-free car loan solutions.',
-      benefits: [
-        'Low EMI options',
-        'Fast processing time',
-        'Loan for new and used cars',
-        'Attractive interest rates'
-      ]
-    },
-    {
-      id: 4,
-      type: 'Business Loans',
-      image: 'https://media.istockphoto.com/id/1383599809/vector/financing-business-concept.jpg?s=612x612&w=0&k=20&c=QLzhI0erh7sZ5442mr1q-sLaMHG7H4GJyk-aUppC4js=',
-      description: 'Fuel your business growth with our tailored business loan solutions.',
-      benefits: [
-        'Flexible loan amounts',
-        'Competitive interest rates',
-        'Quick approval process',
-        'Expert financial advice'
-      ]
-    },
-    {
-      id: 5,
-      type: 'Health Insurance',
-      image: 'https://img.freepik.com/premium-vector/health-insurance-concept-woman-offer-health-insurance-doctor_101179-2108.jpg',
-      description: 'Protect your health and financial well-being with our comprehensive health insurance plans.',
-      benefits: [
-        'Extensive coverage options',
-        'Cashless hospitalisation',
-        'Affordable premiums',
-        '24/7 customer support'
-      ]
-    },
-    {
-      id: 6,
-      type: 'Credit Cards',
-      image: 'https://img.freepik.com/free-vector/concept-landing-page-credit-card-payment_52683-25532.jpg',
-      description: 'Choose from our range of credit cards that suit your lifestyle and spending habits.',
-      benefits: [
-        'Reward points on every spend',
-        'Low annual fees',
-        'Wide acceptance globally',
-        'Exclusive discounts and offers'
-      ]
-    }
-  ];
-  
+  {
+    id: 1,
+    type: 'Personal Loans',
+    image: 'https://blog.stashfin.com/wp-content/uploads/2023/03/22654317_67Z_2112.w012.n001.18A.p20.18-scaled.jpg',
+    description: 'Get quick and easy access to funds with Tavpe\'s Personal Loans. Whether you need cash for emergencies, travel, or home improvements, our loans offer competitive interest rates and flexible repayment options. Apply online today!',
+    benefits: [
+      'Quick application process',
+      'Competitive interest rates',
+      'Flexible repayment terms',
+      'Fast processing time'
+    ],
+    link: 'personalloan'
+  },
+  {
+    id: 2,
+    type: 'Home Loans',
+    image: 'https://media.istockphoto.com/id/1209904855/vector/people-buying-property-with-bank-credit.jpg?s=612x612&w=0&k=20&c=3Ww725UYrlWepWTn0kmBtgPzrbGCstJF2E1o2nz44LE=',
+    description: 'Secure your dream home with Tavpe\'s Home Loans. Enjoy flexible repayment terms, quick approval, and dedicated customer support. Find the right loan for your home purchase needs today!',
+    benefits: [
+      'Flexible repayment terms',
+      'Quick approval process',
+      'Dedicated customer support',
+      'Competitive interest rates'
+    ],
+    link: 'homeloan'
+  },
+  {
+    id: 3,
+    type: 'Car Loans',
+    image: 'https://img.freepik.com/premium-vector/man-rejoices-approval-car-loan-vector-illustration_357257-1155.jpg',
+    description: 'Drive away with your dream car with Tavpe\'s Car Loans. Benefit from low EMI options, fast processing, and attractive interest rates. Explore our car financing solutions today!',
+    benefits: [
+      'Low EMI options',
+      'Fast processing time',
+      'Loan for new and used cars',
+      'Attractive interest rates'
+    ],
+    link: 'carloan'
+  },
+  {
+    id: 4,
+    type: 'Business Loans',
+    image: 'https://media.istockphoto.com/id/1383599809/vector/financing-business-concept.jpg?s=612x612&w=0&k=20&c=QLzhI0erh7sZ5442mr1q-sLaMHG7H4GJyk-aUppC4js=',
+    description: 'Fuel your business growth with Tavpe\'s Business Loans. Access flexible loan amounts, competitive interest rates, and expert financial advice. Discover the right business financing solution for you!',
+    benefits: [
+      'Flexible loan amounts',
+      'Competitive interest rates',
+      'Quick approval process',
+      'Expert financial advice'
+    ],
+    link: 'businessloan'
+  },
+  {
+    id: 5,
+    type: 'Health Insurance',
+    image: 'https://img.freepik.com/premium-vector/health-insurance-concept-woman-offer-health-insurance-doctor_101179-2108.jpg',
+    description: 'Protect your health and financial well-being with Tavpe\'s Health Insurance plans. Enjoy extensive coverage options, cashless hospitalization, and affordable premiums. Get peace of mind with our health insurance solutions!',
+    benefits: [
+      'Extensive coverage options',
+      'Cashless hospitalisation',
+      'Affordable premiums',
+      '24/7 customer support'
+    ],
+    link: 'healthinsurance'
+  },
+  {
+    id: 6,
+    type: 'Credit Cards',
+    image: 'https://img.freepik.com/free-vector/concept-landing-page-credit-card-payment_52683-25532.jpg',
+    description: 'Choose Tavpe\'s Credit Cards tailored to your lifestyle. Earn rewards on every spend, benefit from low annual fees, and enjoy wide global acceptance. Apply for a credit card that suits you today!',
+    benefits: [
+      'Reward points on every spend',
+      'Low annual fees',
+      'Wide acceptance globally',
+      'Exclusive discounts and offers'
+    ],
+    link: 'creditcard'
+  }
+];
+
+export default features;
+
 
 export const Feature = () => {
   return (
@@ -112,7 +122,7 @@ export const Feature = () => {
               </div>
 
               <div className="mt-10">
-                <Link to="/applyloan" className="inline-block px-8 py-4 bg-gray-900 text-white hover:bg-cyan-600 font-semibold rounded-lg text-xl transition duration-300 transform hover:scale-105">
+                <Link to={`/${feature.link}`} className="inline-block px-8 py-4 bg-gray-900 text-white hover:bg-cyan-600 font-semibold rounded-lg text-xl transition duration-300 transform hover:scale-105">
                   Apply Now
                 </Link>
               </div>
@@ -121,5 +131,5 @@ export const Feature = () => {
         </div>
       ))}
     </div>
-    );
-    };
+  );
+};
