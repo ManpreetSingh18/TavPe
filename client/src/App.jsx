@@ -25,13 +25,27 @@ import { HealthInsurance } from "./pages/loan/HealthInsurance";
 import { HomeLoan } from "./pages/loan/HomeLoan";
 import { PersonalLoan } from "./pages/loan/PersonalLoan";
 import  PhoneSignin  from "./pages/PhoneSignin";
+import { FloatingWhatsApp } from 'react-floating-whatsapp'
 
 const App = () => {
   return (
     <>
+    
       <BrowserRouter>
+      <FloatingWhatsApp 
+         phoneNumber="+919873888336"
+         accountName="TavPe"
+         avatar="https://as2.ftcdn.net/v2/jpg/01/58/21/69/1000_F_158216984_zSFxdd273rSrPmwnsK1mwukR5c2N0zWq.jpg"
+         statusMessage="Typically replies within minutes"
+         chatMessage="Hello! How can we help you today?"
+         placeholder="Type your message..."
+         notification
+      />
         <Navbar />
+        
         {/* <Navbar1/> */}
+        
+       
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

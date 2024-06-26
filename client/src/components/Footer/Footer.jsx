@@ -1,18 +1,19 @@
 import React from "react";
-import "./Footer.css";
+
 import { NavLink } from 'react-router-dom';
 
 import { FaPhone, FaEnvelope, FaGlobe } from "react-icons/fa";
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-100 	">
-      <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-4 sm:px-6 lg:space-y-16 lg:px-8">
+    <footer className="bg-gray-100 pt-16">
+      <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-4 sm:px-6 lg:space-y-16 lg:px-8 ">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="m-auto">
             
+          <h2 className="mb-10 text-customRed-500 text-5xl mt-10">TavPe</h2>
             <p className="max-w-xs text-gray-500 ">
-              <h2 className="mb-10 text-customRed-500">TavPe</h2>
+              
               At TavPe Loans, we're here to make your financial journey smooth
               and swift. With flexible options, quick approvals, and competitive
               rates, we're your trusted partner when you need it most.
