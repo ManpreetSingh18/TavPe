@@ -141,7 +141,7 @@ export const Footer = () => {
 
     <li>
       <NavLink
-        to="/businessloan"
+        to="/buisnessloan"
         className="text-gray-700 transition hover:opacity-75"
       >
         Business Loan
