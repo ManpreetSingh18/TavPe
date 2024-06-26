@@ -247,7 +247,9 @@ export const ApplyLoan = ({ typeOfLoan,img}) => {
                 </div>
               )}
               <div>
-                <label htmlFor="loanAmount">Loan Amount Required</label>
+                <label htmlFor="loanAmount">
+                {typeOfLoan === "Health Insurance" ? "Insurance Amount" : "Loan Amount Required"}
+                </label>
                 <input
                   type="number"
                   name="loanAmount"
