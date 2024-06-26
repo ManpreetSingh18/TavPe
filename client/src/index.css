@@ -306,7 +306,7 @@ button {
     }
 
     & input,
-    textarea {
+    textarea  {
       width: 80%;
       padding: 0.4rem 0.6rem;
       font-size: 1.8rem; /* Set the desired font size */
@@ -409,25 +409,29 @@ a:hover {
 /* To add box to profession select option */
 .selectProfession :nth-child(2) {
   text-align: center;
-  width: 15vw;
-  height: 3vh;
-  font-size: 1.2rem;
+  width: 80%;
+  
+  font-size: 1.8rem;
   border: 1px solid black;
 }
 /* To add box to loan select option */
 .selectLoan :nth-child(2) {
   text-align: center;
-  width: 15vw;
-  height: 3vh;
-  font-size: 1.2rem;
+  width: 80%;
+  padding: 0.4rem 0.6rem;
+  font-size: 1.8rem;
   border: 1px solid black;
 }
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
   .selectProfession :nth-child(2) {
-    width: 30vw; /* Adjust width for smaller screens */
-    margin: 0 auto; /* Center horizontally */
+    text-align: center;
+    width: 100%;
+    
+   font-size: 1.8rem;
+   padding: 0.4rem 0.6rem;
+ 
   }
 }
 
@@ -441,7 +445,7 @@ a:hover {
 /* Responsive styles */
 @media screen and (max-width: 768px) {
   .selectLoan :nth-child(2) {
-    width: 30vw; /* Adjust width for smaller screens */
+    width: 100%; /* Adjust width for smaller screens */
     margin: 0 auto; /* Center horizontally */
   }
 }

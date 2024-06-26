@@ -39,7 +39,7 @@ export const HealthInsurance = () => {
       
       return(
         <>
-          <ApplyLoan typeOfLoan="Health Insurance" img={img} />;
+          <ApplyLoan typeOfLoan="Health Insurance" img={img}  />;
           <FAQ faqs={faqs}/>
         </>)
 };
