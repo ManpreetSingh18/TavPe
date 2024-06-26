@@ -1,6 +1,7 @@
 import React from "react";
 import {ApplyLoan} from "../../components/ApplyLoan";
 import { FAQ } from "../../components/FAQ";
+
 export const CarLoan = () => {
 
   const faqs = [
@@ -46,6 +47,7 @@ export const CarLoan = () => {
   return <>
   <ApplyLoan typeOfLoan="Car Loan" img={img}/>;
   <FAQ faqs={faqs}/>
+  
 </>;
 };
 
