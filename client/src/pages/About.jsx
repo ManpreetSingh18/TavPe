@@ -10,7 +10,7 @@ export const About = () => {
           <div className="container grid grid-two-cols">
             <div className="hero-content">
               {/* <p>We care to cure your Health</p> */}
-              <p>Welcome {user ? user.username : "to our website"}</p>
+              
               <h1>About TavPe? </h1>
               <p>
                 About TavPe Loans At TavPe Loans, we understand that

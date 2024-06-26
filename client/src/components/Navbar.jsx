@@ -70,7 +70,7 @@ export const Navbar = () => {
                 </button>
                 <ul className={`dropdown-menu absolute right-0 mt-2 bg-white shadow-md z-50 ${isDropdownOpen ? "block" : "hidden"}`}>
                   <li>
-                    <NavLink to="/buisnessloan" onClick={closeMenu} className="block px-4 py-2 text-black hover:bg-gray-100">
+                    <NavLink to="/businessloan" onClick={closeMenu} className="block px-4 py-2 text-black hover:bg-gray-100">
                       Business Loan
                     </NavLink>
                   </li>

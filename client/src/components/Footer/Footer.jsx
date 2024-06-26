@@ -400,13 +400,11 @@ export const Footer = () => {
         </div>
 
         <p className="text-customRed-500">
-          Created By{" "}
-          <a href="https://www.linkedin.com/in/themanpreetsingh/">
-            Manpreet Singh
-          </a>
+          *Conditions Applied.
+          
         </p>
 
-        <p className="text-xs text-customRed-500">
+        <p className="text-xl text-customRed-500">
           &copy; 2024. TavPe . All rights reserved.
         </p>
       </div>

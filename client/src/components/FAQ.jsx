@@ -62,14 +62,7 @@ export const FAQ = ({faqs}) => {
               >
                 <p>
                   {faq.answer}{" "}
-                  <a
-                    href="#"
-                    title=""
-                    className="text-blue-600 transition-all duration-200 hover:underline"
-                  >
-                    aliqua dolor
-                  </a>{" "}
-                  do amet sint. Velit officia consequat duis enim velit mollit.
+                 
                 </p>
               </div>
             </div>

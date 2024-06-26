@@ -17,7 +17,7 @@ import { AdminUsers } from "./pages/Admin-Users";
 import { AdminUpdate } from "./pages/Admin-Update";
 import {EmiCalculator} from "./pages/emi";
 
-import { BuisnessLoan } from "./pages/loan/BuisnessLoan";
+import { BusinessLoan } from "./pages/loan/BusinessLoan";
 import { CarLoan } from "./pages/loan/CarLoan";
 import { CreditCard } from "./pages/loan/CreditCard";
 import { HealthInsurance } from "./pages/loan/HealthInsurance";
@@ -59,7 +59,7 @@ const App = () => {
 
           <Route path="/personalloan" element={<PersonalLoan/>} />
           <Route path="/homeloan" element={<HomeLoan />} />
-          <Route path="/buisnessloan" element={<BuisnessLoan />} />
+          <Route path="/businessloan" element={<BusinessLoan />} />
           <Route path="/carloan" element={<CarLoan />} />
           <Route path="/creditcard" element={<CreditCard />} />
           <Route path="/healthinsurance" element={<HealthInsurance />} />
