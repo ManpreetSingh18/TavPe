@@ -141,7 +141,7 @@ export const Footer = () => {
 
     <li>
       <NavLink
-        to="/buisnessloan"
+        to="/businessloan"
         className="text-gray-700 transition hover:opacity-75"
       >
         Business Loan
@@ -218,7 +218,7 @@ export const Footer = () => {
                 <li className="flex items-center">
                   <FaPhone className="text-gray-700 mr-2" />
                   <a
-                    href="tel:+1234567890"
+                    href="tel:+919873888336"
                     className="text-gray-700 transition hover:opacity-75"
                   >
                     Call Us: +91 98738 88336
@@ -236,7 +236,7 @@ export const Footer = () => {
                 <li className="flex items-center">
                   <FaGlobe className="text-gray-700 mr-2" />
                   <a
-                    href="https://www.example.com"
+                    href="https://www.tavpe.in"
                     className="text-gray-700 transition hover:opacity-75"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -399,13 +399,14 @@ export const Footer = () => {
           </ul>
         </div>
 
-        <p className="text-customRed-500">
-          *Conditions Applied.
+        
+
+        <p className="text-4xl text-customRed-500">
+          &copy; 2024. TavPe . All rights reserved.
           
         </p>
-
-        <p className="text-xl text-customRed-500">
-          &copy; 2024. TavPe . All rights reserved.
+        <p className="text-customRed-500 text2xs">
+          *Conditions Applied.
         </p>
       </div>
 
