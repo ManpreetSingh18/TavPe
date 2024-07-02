@@ -26,12 +26,13 @@ import { HomeLoan } from "./pages/loan/HomeLoan";
 import { PersonalLoan } from "./pages/loan/PersonalLoan";
 import  PhoneSignin  from "./pages/PhoneSignin";
 import { FloatingWhatsApp } from 'react-floating-whatsapp'
-
+import ScrollToTop from "./components/ScrollToTop"
 const App = () => {
   return (
     <>
     
       <BrowserRouter>
+      <ScrollToTop/>
       <FloatingWhatsApp 
          phoneNumber="+919873888336"
          accountName="TavPe"

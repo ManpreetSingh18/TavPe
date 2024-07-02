@@ -1,6 +1,7 @@
 import React from "react";
 
 import { NavLink } from 'react-router-dom';
+import { Link, Element } from 'react-scroll';
 
 import { FaPhone, FaEnvelope, FaGlobe } from "react-icons/fa";
 
@@ -132,7 +133,7 @@ export const Footer = () => {
 
     <li>
       <NavLink
-        to="/homeloan"
+        to="/homeloan" smooth={true} duration={500}
         className="text-gray-700 transition hover:opacity-75"
       >
         Home Loan
