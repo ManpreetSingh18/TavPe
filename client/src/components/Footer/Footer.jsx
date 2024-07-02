@@ -12,7 +12,7 @@ export const Footer = () => {
           <div className="m-auto">
             
           <h2 className="mb-10 text-customRed-500 text-5xl mt-10">TavPe</h2>
-            <p className="max-w-xs text-gray-500 ">
+            <p className="max-w-xs text-gray-500 text-left">
               
               At TavPe Loans, we're here to make your financial journey smooth
               and swift. With flexible options, quick approvals, and competitive
@@ -250,7 +250,7 @@ export const Footer = () => {
         </div>
 
         <div className="mb-4">
-          <ul className="columns-2 md:columns-3 lg:columns-4 space-y-2">
+          <ul className="text-left columns-2 md:columns-3 lg:columns-4 space-y-2">
             <li className="mr-4 mb-2">
               <span className="text-gray-700">Credit Cards</span>
             </li>
@@ -321,7 +321,7 @@ export const Footer = () => {
         </div>
 
         <div className="mb-4">
-          <ul className="columns-2 md:columns-3 lg:columns-4 space-y-2">
+          <ul className="text-left columns-2 md:columns-3 lg:columns-4 space-y-2">
             <li className="mr-4 mb-2">
               <span className="text-gray-700">Personal Loan</span>
             </li>

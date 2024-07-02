@@ -12,8 +12,8 @@ export const About = () => {
               {/* <p>We care to cure your Health</p> */}
               
               <h1>About TavPe? </h1>
-              <p>
-                About TavPe Loans At TavPe Loans, we understand that
+              <p >
+                About TavPe Loans, we understand that
                 financial needs can arise unexpectedly and sometimes require
                 urgent attention. That's why we are committed to providing
                 hassle-free loan solutions tailored to meet your specific
