@@ -44,7 +44,7 @@ const testimonials = [
   },
   {
     id: 6,
-    imgSrc: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/sofia-jones.png",
+    imgSrc: "https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/joseph-mcfall.png",
     name: "Vikram Patel",
     title: "Smooth Loan Repayment Options",
     occupation: "Marketing Manager",
