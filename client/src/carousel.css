@@ -124,7 +124,8 @@
 
 @media (max-width: 768px) {
   .carousel {
-    width: 100vw;
+   
+    width: 90vw; 
     height: 80vh;
   }
 
@@ -135,7 +136,8 @@
 
 @media (max-width: 576px) {
   .carousel {
-    width: 100vw;
+   
+    width: 90vw; 
     height: 90vh;
   }
 
