@@ -90,46 +90,46 @@ export default features;
 export const Feature = () => {
   return (
     <div className="bg-gray-100">
-      {features.map((feature) => (
-        <div key={feature.id} className={`py-24 sm:py-32 lg:flex ${feature.id % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-          <div className="container mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-16">
-            {/* Image */}
-            <div className={`w-full lg:w-1/2 ${feature.id % 2 === 0 ? 'order-1' : 'order-2'}`}>
-              <div className="relative overflow-hidden rounded-lg shadow-xl">
-                <img
-                  className="w-full h-auto rounded-3xl"
-                  src={feature.image}
-                  alt={`Background for ${feature.type}`}
-                />
-              </div>
+    {features.map((feature) => (
+      <div key={feature.id} className={`py-24 sm:py-32 lg:flex ${feature.id % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+        <div className="container mx-auto px-6 lg:px-8 flex flex-col lg:flex-row items-center justify-between gap-16">
+          {/* Image */}
+          <div className={`w-full lg:w-1/2 ${feature.id % 2 === 0 ? 'lg:order-1' : 'lg:order-2'}`}>
+            <div className="relative overflow-hidden rounded-lg shadow-xl">
+              <img
+                className="w-full h-auto rounded-3xl"
+                src={feature.image}
+                alt={`Background for ${feature.type}`}
+              />
+            </div>
+          </div>
+
+          {/* Content */}
+          <div className={`w-full lg:w-1/2 ${feature.id % 2 === 0 ? 'order-2' : 'order-1'}`}>
+            <div className="text-gray-800">
+              <h1 className="mt-2 text-6xl sm:text-6xl font-bold text-gray-900">{feature.type}</h1>
+              <p className="mt-6 text-lg text-gray-700">{feature.description}</p>
+              <ul className="mt-8 space-y-4">
+                {feature.benefits.map((benefit, idx) => (
+                  <li key={idx} className="flex items-start">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span className="text-gray-700">{benefit}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
 
-            {/* Content */}
-            <div className={`w-full lg:w-1/2 ${feature.id % 2 === 0 ? 'order-2' : 'order-1'}`}>
-              <div className="text-gray-800">
-                <h1 className="mt-2 text-6xl sm:text-6xl font-bold text-gray-900">{feature.type}</h1>
-                <p className="mt-6 text-lg text-gray-700">{feature.description}</p>
-                <ul className="mt-8 space-y-4">
-                  {feature.benefits.map((benefit, idx) => (
-                    <li key={idx} className="flex items-start">
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-green-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span className="text-gray-700">{benefit}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="mt-10">
-                <Link to={`/${feature.link}`} className="inline-block px-8 py-4 bg-gray-900 text-white hover:bg-cyan-600 font-semibold rounded-lg text-xl transition duration-300 transform hover:scale-105">
-                  Apply Now
-                </Link>
-              </div>
+            <div className="mt-10">
+              <Link to={`/${feature.link}`} className="inline-block px-8 py-4 bg-gray-900 text-white hover:bg-cyan-600 font-semibold rounded-lg text-xl transition duration-300 transform hover:scale-105">
+                Apply Now
+              </Link>
             </div>
           </div>
         </div>
-      ))}
-    </div>
+      </div>
+    ))}
+  </div>
   );
 };
