@@ -25,7 +25,7 @@ export const Navbar = () => {
 
   return (
     <>
-      <header className="bg-white shadow-md z-50 relative">
+      <header className="bg-white  z-50 relative">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="logo-brand text-xl font-bold text-maroon">
             <NavLink to="/" onClick={closeMenu}>TavPe</NavLink>

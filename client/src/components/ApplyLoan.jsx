@@ -24,7 +24,7 @@ export const ApplyLoan = ({ typeOfLoan,img}) => {
   const [otpUser, setOtpUser] = useState(null);
   const [otp, setOtp] = useState("");
   const [otpVerified, setOtpVerified] = useState(false); // State to track OTP verification
-
+  const [loading, setLoading] = useState(false); //loading state
   const { user } = useAuth();
 
   const sentOtp = async () => {
@@ -48,6 +48,7 @@ export const ApplyLoan = ({ typeOfLoan,img}) => {
     } catch (error) {
       console.log(error);
       toast.error("Failed to verify OTP");
+      setLoading(false);
     }
   };
 
@@ -72,9 +73,10 @@ export const ApplyLoan = ({ typeOfLoan,img}) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+    setLoading(true); //  Set loading to true when starting the request
     if (!otpVerified) {
       toast.error("Please verify OTP before submitting the form");
+      setLoading(false); // Set loading to false when
       return;
     }
 
@@ -111,6 +113,8 @@ export const ApplyLoan = ({ typeOfLoan,img}) => {
       }
     } catch (error) {
       console.log("Error Occurred: " + error);
+    }finally {
+      setLoading(false); // 3. Set loading to false once request is complete
     }
   };
   return (
@@ -283,7 +287,9 @@ export const ApplyLoan = ({ typeOfLoan,img}) => {
                 </select>
               </div>
               <div>
-                <button type="submit">Submit</button>
+                <button type="submit" disabled={loading} >
+                  {loading ? "Submitting..." : "Submit"}
+                </button>
               </div>
             </form>
           </section>

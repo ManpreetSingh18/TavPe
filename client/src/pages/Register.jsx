@@ -11,6 +11,8 @@ export const Register = () => {
     phone: "",
     password: "",
   });
+  const [loading, setLoading] = useState(false); //loading state
+
 
   const navigate = useNavigate();
 
@@ -26,6 +28,8 @@ export const Register = () => {
   const { storetokenInLs } = useAuth();
 
   const handleSubmit = async (e) => {
+    setLoading(true); //  Set loading to true when starting the request
+
     e.preventDefault();
     try {
       const response = await fetch(`${baseUrl}/api/auth/register`, {
@@ -49,6 +53,8 @@ export const Register = () => {
       }
     } catch (e) {
       console.log("Error Occurred: " + e.message);
+    }finally {
+      setLoading(false); // 3. Set loading to false once request is complete
     }
   };
 
@@ -116,8 +122,8 @@ export const Register = () => {
                       onChange={handleInput}
                     />
                     <br />
-                    <button type="submit" className="btn btn-submit">
-                      Register Now
+                    <button type="submit" className="btn btn-submit" disabled={loading}>
+                      {loading ? "Registering..." : "Register Now"} 
                     </button>
                   </div>
                 </form>
