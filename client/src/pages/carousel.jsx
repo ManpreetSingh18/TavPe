@@ -50,7 +50,7 @@ export const Carousel = () => {
             <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Property Loan Image" />
             <div className="slide-content">
               <h2>Buisness Loan @ 14.5%*</h2>
-              <a href="/buisnessloan" className="button">Apply Now</a>
+              <a href="/businessloan" className="button">Apply Now</a>
             </div>
           </li>
           <li className="slide">
