@@ -82,7 +82,7 @@ export const EmiCalculator = () => {
           </div>
         )}
         {isEmiCalculated && (
-          <NavLink to="/applyloan">
+          <NavLink to="/homeloan">
             <button
               className="apply-btn"
             >
