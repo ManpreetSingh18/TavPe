@@ -1,6 +1,11 @@
 import React from "react";
 
+<<<<<<< Updated upstream
 import { NavLink } from 'react-router-dom';
+=======
+import { NavLink } from "react-router-dom";
+import { Link, Element } from "react-scroll";
+>>>>>>> Stashed changes
 
 import { FaPhone, FaEnvelope, FaGlobe } from "react-icons/fa";
 
@@ -10,13 +15,24 @@ export const Footer = () => {
       <div className="mx-auto max-w-screen-xl space-y-8 px-4 py-4 sm:px-6 lg:space-y-16 lg:px-8 ">
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="m-auto">
+<<<<<<< Updated upstream
             
           <h2 className="mb-10 text-customRed-500 text-5xl mt-10">TavPe</h2>
             <p className="max-w-xs text-gray-500 ">
               
               At TavPe Loans, we're here to make your financial journey smooth
+=======
+            <img
+              src="../images/logo.jpg"
+              alt="Logo"
+              className="h-70 w-60   bg-white p-1 rounded shadow-lg"
+            />
+
+            <p className="max-w-xs text-gray-500 text-center">
+              {/* At TavPe Loans, we're here to make your financial journey smooth
+>>>>>>> Stashed changes
               and swift. With flexible options, quick approvals, and competitive
-              rates, we're your trusted partner when you need it most.
+              rates, we're your trusted partner when you need it most. */}
             </p>
 
             <ul className="mt-8 flex justify-center gap-6">
@@ -111,25 +127,24 @@ export const Footer = () => {
                   </svg>
                 </a>
               </li>
-
-             
             </ul>
           </div>
 
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:col-span-2 lg:grid-cols-4">
-          <div>
-  <p className="font-medium text-customRed-500">Services</p>
+            <div>
+              <p className="font-medium text-customRed-500">Services</p>
 
-  <ul className="mt-6 space-y-4 text-sm">
-    <li>
-      <NavLink
-        to="/personalloan"
-        className="text-gray-700 transition hover:opacity-75"
-      >
-        Personal Loan
-      </NavLink>
-    </li>
+              <ul className="mt-6 space-y-4 text-sm">
+                <li>
+                  <NavLink
+                    to="/personalloan"
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    Personal Loan
+                  </NavLink>
+                </li>
 
+<<<<<<< Updated upstream
     <li>
       <NavLink
         to="/homeloan"
@@ -138,44 +153,56 @@ export const Footer = () => {
         Home Loan
       </NavLink>
     </li>
+=======
+                <li>
+                  <NavLink
+                    to="/homeloan"
+                    smooth={true}
+                    duration={500}
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    Home Loan
+                  </NavLink>
+                </li>
+>>>>>>> Stashed changes
 
-    <li>
-      <NavLink
-        to="/businessloan"
-        className="text-gray-700 transition hover:opacity-75"
-      >
-        Business Loan
-      </NavLink>
-    </li>
+                <li>
+                  <NavLink
+                    to="/businessloan"
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    Business Loan
+                  </NavLink>
+                </li>
 
-    <li>
-      <NavLink
-        to="/carloan"
-        className="text-gray-700 transition hover:opacity-75"
-      >
-        Car Loan
-      </NavLink>
-    </li>
+                <li>
+                  <NavLink
+                    to="/carloan"
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    Car Loan
+                  </NavLink>
+                </li>
 
-    <li>
-      <NavLink
-        to="/healthinsurance"
-        className="text-gray-700 transition hover:opacity-75"
-      >
-        Health Insurance
-      </NavLink>
-    </li>
+                <li>
+                  <NavLink
+                    to="/healthinsurance"
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    Health Insurance
+                  </NavLink>
+                </li>
 
-    <li>
-      <NavLink
-        to="/creditcard"
-        className="text-gray-700 transition hover:opacity-75"
-      >
-        Credit Card
-      </NavLink>
-    </li>
-  </ul>
-</div>
+                <li>
+                  <NavLink
+                    to="/creditcard"
+                    className="text-gray-700 transition hover:opacity-75"
+                  >
+                    Credit Card
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
 
             <div>
               <p className="font-medium text-customRed-500">Company</p>
@@ -399,15 +426,10 @@ export const Footer = () => {
           </ul>
         </div>
 
-        
-
         <p className="text-4xl text-customRed-500">
           &copy; 2024. TavPe . All rights reserved.
-          
         </p>
-        <p className="text-customRed-500 text2xs">
-          *Conditions Applied.
-        </p>
+        <p className="text-customRed-500 text2xs">*Conditions Applied.</p>
       </div>
 
       {/* <h3 className="text-3xl font-semibold mb-2 text-customRed-500 text-start ">Credit Cards</h3> */}
