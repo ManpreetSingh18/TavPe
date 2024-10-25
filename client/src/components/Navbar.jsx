@@ -28,7 +28,15 @@ export const Navbar = () => {
       <header className="bg-white  z-50 relative">
         <div className="container mx-auto px-4 py-3 flex justify-between items-center">
           <div className="logo-brand text-xl font-bold text-maroon">
-            <NavLink to="/" onClick={closeMenu}>TavPe</NavLink>
+            <NavLink to="/" onClick={closeMenu}>
+              {/* TavPe */}
+              <img
+                src="images/logo2.png"
+                alt="TavPe Logo"
+                className="h-22 w-20"
+              />
+              
+            </NavLink>
           </div>
           <button
             className="hamburger md:hidden block text-3xl focus:outline-none"

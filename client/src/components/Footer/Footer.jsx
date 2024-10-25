@@ -12,13 +12,18 @@ export const Footer = () => {
         <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
           <div className="m-auto">
             
-          <h2 className="mb-10 text-customRed-500 text-5xl mt-10">TavPe</h2>
-            <p className="max-w-xs text-gray-500 text-left">
+          {/* <h2 className="mb-10 text-customRed-500 text-5xl mt-10">TavPe</h2> */}
+            {/* <p className="max-w-xs text-gray-500 text-left">
               
               At TavPe Loans, we're here to make your financial journey smooth
               and swift. With flexible options, quick approvals, and competitive
               rates, we're your trusted partner when you need it most.
-            </p>
+            </p> */}
+            <img
+              src="../images/logo2.png"
+              alt="Logo"
+              className="h-70 w-60   "
+            />
 
             <ul className="mt-8 flex justify-center gap-6">
               <li>
