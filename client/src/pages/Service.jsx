@@ -17,6 +17,7 @@ export const Service = () => {
       description: 'Affordable personal loans for various personal needs such as medical expenses, education, or travel.',
       price: '₹50,000 - ₹1,00,00,000',
       provider: 'Muthoot',
+      image: PersonalLoanImg,
       link: 'personalloan'
     },
     {
@@ -25,6 +26,7 @@ export const Service = () => {
       description: 'Tailored loans to support small businesses and professionals in expanding their operations.',
       price: '₹50,000 - ₹1,00,00,000',
       provider: 'Muthoot',
+      image: BusinessLoanImg,
       link: 'businessloan'
     },
     {
@@ -33,6 +35,7 @@ export const Service = () => {
       description: 'Flexible financing options for purchasing a new/old car with competitive interest rates.',
       price: '₹2,00,000 - ₹1,00,00,000',
       provider: 'Muthoot',
+      image: CarLoanImg,
       link: 'carloan'
     },
     {
