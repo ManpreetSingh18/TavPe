@@ -2,12 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 // Define an array of loan features
-
+import PersonalLoanImg from '../assets/images/personalLoan.jpg';
 const features = [
   {
     id: 1,
     type: 'Personal Loans',
-    image: 'https://blog.stashfin.com/wp-content/uploads/2023/03/22654317_67Z_2112.w012.n001.18A.p20.18-scaled.jpg',
+    image: PersonalLoanImg,
     description: 'Get quick and easy access to funds with Tavpe\'s Personal Loans. Whether you need cash for emergencies, travel, or home improvements, our loans offer competitive interest rates and flexible repayment options. Apply online today!',
     benefits: [
       'Quick application process',

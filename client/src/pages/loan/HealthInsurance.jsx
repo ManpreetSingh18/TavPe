@@ -1,6 +1,8 @@
 import React from "react";
 import {ApplyLoan} from "../../components/ApplyLoan";
 import { FAQ } from "../../components/FAQ";
+import HealthInsuranceImg from '../../assets/images/healthInsurance.avif';
+
 export const HealthInsurance = () => {
     const faqs = [
         
@@ -35,11 +37,10 @@ export const HealthInsurance = () => {
             "Yes, TavPe offers family floater plans that cover your spouse, children, and dependent parents under a single policy, ensuring comprehensive health coverage for your loved ones.",
         },
       ];
-      const img="https://www.fincover.com/wp-content/uploads/2020/03/health-ins01.png"
-      
+
       return(
         <>
-          <ApplyLoan typeOfLoan="Health Insurance" img={img}  />;
+          <ApplyLoan typeOfLoan="Health Insurance" img={HealthInsuranceImg }  />;
           <FAQ faqs={faqs}/>
         </>)
 };

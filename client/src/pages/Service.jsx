@@ -1,6 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+// Import local images
+import PersonalLoanImg from '../assets/images/personalLoan.jpg';
+import BusinessLoanImg from '../assets/images/businessloan.jpg';
+import CarLoanImg from '../assets/images/carloan.avif';
+import HomeLoanImg from '../assets/images/homeLoan.jpg';
+import HealthInsuranceImg from '../assets/images/healthInsurance.avif';
+import CreditCardImg from '../assets/images/credit.jpg';
+
 export const Service = () => {
   const services = [
     {
@@ -9,8 +17,7 @@ export const Service = () => {
       description: 'Affordable personal loans for various personal needs such as medical expenses, education, or travel.',
       price: '₹50,000 - ₹1,00,00,000',
       provider: 'Muthoot',
-      imageUrl: 'https://www.fincover.com/wp-content/uploads/2020/10/personal-loan3.png',
-      link: 'personalloan' // Define the URL segment for Personal Loan
+      link: 'personalloan'
     },
     {
       _id: '6648c91bb94a6a0d78de24e8',
@@ -18,8 +25,7 @@ export const Service = () => {
       description: 'Tailored loans to support small businesses and professionals in expanding their operations.',
       price: '₹50,000 - ₹1,00,00,000',
       provider: 'Muthoot',
-      imageUrl: 'https://www.fincover.com/wp-content/uploads/2020/10/property-loan.png',
-      link: 'businessloan' // Define the URL segment for Business Loan
+      link: 'businessloan'
     },
     {
       _id: '6648c91bb94a6a0d78de24e9',
@@ -27,8 +33,7 @@ export const Service = () => {
       description: 'Flexible financing options for purchasing a new/old car with competitive interest rates.',
       price: '₹2,00,000 - ₹1,00,00,000',
       provider: 'Muthoot',
-      imageUrl: 'https://www.fincover.com/wp-content/uploads/2020/10/car-loan.png',
-      link: 'carloan' // Define the URL segment for Car Loan
+      link: 'carloan'
     },
     {
       _id: '6648c91bb94a6a0d78de24eb',
@@ -36,8 +41,8 @@ export const Service = () => {
       description: 'Comprehensive home loans for purchasing or renovating property with easy repayment options.',
       price: '₹5,00,000 - ₹1,00,00,000',
       provider: 'Muthoot',
-      imageUrl: 'https://www.fincover.com/wp-content/uploads/2020/10/property-loan.png',
-      link: 'homeloan' // Define the URL segment for Home/Property Loan
+      image: HomeLoanImg,
+      link: 'homeloan'
     },
     {
       _id: '6648c91bb94a6a0d78de24ec',
@@ -45,8 +50,8 @@ export const Service = () => {
       description: 'Affordable health insurance plans providing extensive coverage for medical expenses.',
       price: '₹50,000 - ₹1,00,00,000',
       provider: 'Muthoot',
-      imageUrl: 'https://www.fincover.com/wp-content/uploads/2020/03/health-ins01.png',
-      link: 'healthinsurance' // Define the URL segment for Health Insurance
+      image: HealthInsuranceImg,
+      link: 'healthinsurance'
     },
     {
       _id: '6648c91bb94a6a0d78de24ed',
@@ -54,8 +59,8 @@ export const Service = () => {
       description: 'Credit cards with attractive rewards and cashback offers tailored to your spending habits.',
       price: '₹50,000 - ₹1,00,00,000',
       provider: 'Muthoot',
-      imageUrl: 'https://www.fincover.com/wp-content/uploads/2024/01/Best-Credit-card.png',
-      link: 'creditcard' // Define the URL segment for Credit Card
+      image: CreditCardImg,
+      link: 'creditcard'
     }
   ];
 
@@ -64,10 +69,13 @@ export const Service = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service) => (
-            <div className="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 transform hover:scale-105 hover:bg-gray-100 cursor-pointer" key={service._id}>
+            <div
+              className="bg-white rounded-lg shadow-md overflow-hidden transition duration-300 transform hover:scale-105 hover:bg-gray-100 cursor-pointer"
+              key={service._id}
+            >
               <div className="h-56 overflow-hidden">
                 <img
-                  src={service.imageUrl}
+                  src={service.image}  // Local image
                   alt={service.service}
                   className="w-full h-full object-cover"
                 />

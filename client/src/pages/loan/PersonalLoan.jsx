@@ -1,6 +1,8 @@
 import React from "react";
 import {ApplyLoan} from "../../components/ApplyLoan";
 import { FAQ } from "../../components/FAQ";
+import PersonalLoanImg from '../../assets/images/personalLoan.jpg';
+
 export const PersonalLoan = () => {
   const faqs = [
     {
@@ -79,9 +81,8 @@ export const PersonalLoan = () => {
         "Yes, TavPe provides a platform where you can easily track the status of your loan application. You will receive updates at each step of the process, from submission to approval and disbursement.",
     }
   ];
-  const img="https://blog.stashfin.com/wp-content/uploads/2023/03/22654317_67Z_2112.w012.n001.18A.p20.18-scaled.jpg"
   return <>
-          <ApplyLoan typeOfLoan="Personal Loan" img={img}/>;
+          <ApplyLoan typeOfLoan="Personal Loan" img={PersonalLoanImg}/>;
           <FAQ faqs={faqs}/>
         </>;
 };

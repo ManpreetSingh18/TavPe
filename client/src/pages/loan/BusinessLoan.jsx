@@ -1,6 +1,7 @@
 import React from "react";
 import {ApplyLoan} from "../../components/ApplyLoan";
 import { FAQ } from "../../components/FAQ";
+import BusinessLoanImg from '../../assets/images/businessloan.jpg';
 
 export const BusinessLoan = () => {
   const faqs = [
@@ -36,10 +37,9 @@ export const BusinessLoan = () => {
 
 
   
-  const img="https://www.fincover.com/wp-content/uploads/2020/10/property-loan.png"
   
   return <>
-  <ApplyLoan typeOfLoan="Business Loan" img={img}/>;
+  <ApplyLoan typeOfLoan="Business Loan" img={BusinessLoanImg}/>;
   <FAQ faqs={faqs}/>
 </>;
 };

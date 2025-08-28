@@ -1,6 +1,7 @@
 import React from "react";
 import {ApplyLoan} from "../../components/ApplyLoan";
 import { FAQ } from "../../components/FAQ";
+import CarLoanImg from '../../assets/images/carloan.avif';
 
 export const CarLoan = () => {
 
@@ -42,10 +43,10 @@ export const CarLoan = () => {
     }
   ];
 
-  const img="https://www.fincover.com/wp-content/uploads/2020/10/car-loan.png"
+  
   
   return <>
-  <ApplyLoan typeOfLoan="Car Loan" img={img}/>;
+  <ApplyLoan typeOfLoan="Car Loan" img={CarLoanImg}/>;
   <FAQ faqs={faqs}/>
   
 </>;
